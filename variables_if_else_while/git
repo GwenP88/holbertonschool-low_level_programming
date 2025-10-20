@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "Insertion fichiers.c" && git push
+git add . && git commit -m "Task 1" && git push
