@@ -1,3 +1,5 @@
+#include <stdlib.h>
+#include <time.h>
 #include <stdio.h>
 
 /**
@@ -6,13 +8,26 @@
  * Return: Always 0 (Success)
  */
 
-int main()
+int main(void)
 {
-	char i = 0;
+	int n;
+	int ld;
 
-	for(i = 'a'; i <= 'z' ; i++);
-		putchar(i);
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-	putchar("\n");
+	ld = n % 10;
+
+	if (ld > 5)
+	{
+		printf("Last digit of %d is %d and is greater than 5", n, ld);
+	} else if (n == 0)
+	{
+		printf("Last digit of %d is %d and is 0", n, ld);
+	} else if (n < 6 && n != 0)
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0", n, ld);
+	}
+
 	return (0);
 }
