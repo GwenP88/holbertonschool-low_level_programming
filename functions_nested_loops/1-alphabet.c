@@ -1,9 +1,9 @@
 #include "main.h"
 
 /**
- * function print_alphabet :
+ * print_alphabet - imprime l'alphabet en minuscule, suivi d'une nouvelle ligne
  *
- * Return: Always 0.
+ * Description: utilise _putchar pour afficher chaque lettre de 'a' à 'z'
  */
 
 void print_alphabet(void)
