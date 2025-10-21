@@ -2,7 +2,8 @@
 #include <stdio.h>
 
 /**
- * main - Print the list of single digit numbers of base 10 (prinf is forbiden)
+ * main - Print the list of single digit numbers of base 10
+ * separate by a virgule
  *
  * Return: Always 0 (Success)
  */
@@ -15,7 +16,7 @@ int main(void)
 	{
 		putchar(i);
 
-		if (i != 9)
+		if (i != '9')
 		{
 			putchar(',');
 		}
