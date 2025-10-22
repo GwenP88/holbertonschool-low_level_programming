@@ -22,14 +22,11 @@ void jack_bauer(void)
 			_putchar(':');
 			_putchar('0' + (b / 10));
 			_putchar('0' + (b % 10));
-			_putchar('\n');
 
 			if (!(a == 23 && b == 59))
 			{
-				_putchar(' ');
+				_putchar('\n');
 			}
 		}
 	}
-
-	_putchar('\n');
 }
