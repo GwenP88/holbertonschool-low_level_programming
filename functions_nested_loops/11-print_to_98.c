@@ -26,8 +26,11 @@ void print_to_98(int n)
 			{
 				_putchar('-');
 				nbr = -nbr;
-				_putchar('0' + (nbr / 10));
+
+				_putchar('0' + (nbr / 100));
+				_putchar('0' + ((nbr / 10) % 10));
 				_putchar('0' + (nbr % 10));
+
 			} else if (i < 0)
 			{
 				_putchar('-');
