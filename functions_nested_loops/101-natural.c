@@ -19,7 +19,7 @@ int main(void)
 			sum = +i;
 		}
 	}
-	printf("%ld", sum);;
+	printf("%ld", sum);
 
 	return (0);
 }
