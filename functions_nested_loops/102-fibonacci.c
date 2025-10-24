@@ -15,7 +15,7 @@ int main(void)
 	int i;
 
 
-	for (i = 0; i <= 51 ; i++)
+	for (i = 0; i <= 50 ; i++)
 	{
 		sum = a + b;
 		printf("%ld", sum);
