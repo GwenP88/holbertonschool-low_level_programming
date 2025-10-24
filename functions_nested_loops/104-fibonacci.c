@@ -18,6 +18,7 @@ int main(void)
 	long retenue;
 	int i;
 
+	printf("1, ");
 	for (i = 0; i < 96 ; i++)
 	{
 		tail_sum = tail_a + tail_b;
