@@ -12,7 +12,7 @@ int main(void)
 	long head_a = 0;
 	long tail_a = 1;
 	long head_b = 0;
-	long tail_b = 2;
+	long tail_b = 0;
 	long head_sum;
 	long tail_sum;
 	long retenue;
