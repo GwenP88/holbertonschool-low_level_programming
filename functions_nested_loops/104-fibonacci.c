@@ -19,7 +19,7 @@ int main(void)
 	int i;
 
 	printf("1, ");
-	for (i = 0; i < 96 ; i++)
+	for (i = 0; i < 97 ; i++)
 	{
 		tail_sum = tail_a + tail_b;
 		retenue = tail_sum / BASE;
@@ -40,7 +40,7 @@ int main(void)
 		head_b = head_sum;
 		tail_b = tail_sum;
 
-		if (i < 95)
+		if (i < 96)
 			printf(", ");
 	}
 	printf("\n");
