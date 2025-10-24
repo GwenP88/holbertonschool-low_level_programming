@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#define BASE 1000000000L
 
 /**
  * main - check the code.
@@ -9,18 +9,35 @@
 
 int main(void)
 {
-	long a = 0;
-	long b = 1;
-	long sum;
+	long head_a = 0;
+	long tail_a = 1;
+	long head_b = 0;
+	long tail_b = 2;
+	long head_sum;
+	long tail_sum;
+	long retenue;
 	int i;
-
 
 	for (i = 0; i < 98 ; i++)
 	{
-		sum = a + b;
-		printf("%ld", sum);
-		a = b;
-		b = sum;
+		tail_sum = tail_a + tail_b;
+		retenue = tail_sum / BASE;
+		tail_sum = tail_sum % BASE;
+		head_sum = head_a + head_b + retenue;
+
+		if (head_sum == 0)
+		{
+			printf("%ld", tail_sum);
+		}
+		else
+		{
+			printf("%ld%09ld", head_sum, tail_sum);
+		}
+
+		head_a = head_b;
+		tail_a = tail_b;
+		head_b = head_sum;
+		tail_b = tail_sum;
 
 		if (i < 97)
 			printf(", ");
