@@ -22,7 +22,6 @@ void times_table(void)
 			if (j == 0)
 			{
 				_putchar('0' + n);
-
 			}
 			else
 			{
@@ -33,7 +32,6 @@ void times_table(void)
 				{
 					_putchar(' ');
 					_putchar('0' + n);
-
 				}
 				else
 				{
