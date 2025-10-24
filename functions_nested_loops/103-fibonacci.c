@@ -12,20 +12,23 @@ int main(void)
 	long a = 0;
 	long b = 1;
 	long sum = 0;
+	long sum_pair = 0;
 	int i;
 
-	while (sum < 4000000)
-
+	while (a <= 4000000)
 	{
 		i = 1;
 		sum = a + b;
-		printf("%ld, ", sum);
 		a = b;
 		b = sum;
-		i ++;
+		i++;
 
+		if (sum % 2 == 0)
+		{
+			sum_pair += sum;
+		}
 	}
+	printf("%ld", sum_pair);
 	printf("\n");
-
 	return (0);
 }
