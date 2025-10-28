@@ -1,9 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 -  function that prints every other character of a string,
- * starting with the first character, followed by a new line.
- * followed by a new line.
+ * puts2 - function that prints half of a string, followed by a new line.
  * @str: a pointer to a string;
  */
 
