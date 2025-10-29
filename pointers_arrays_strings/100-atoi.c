@@ -11,18 +11,18 @@ int _atoi(char *s)
 	int i = 0;
 	int resultat = 0;
 	int nombre;
-	int signe = + 1;
+	int signe = 1;
 
-	while( s[i] == ' ' || s[i] == '\t' ||
+	while (s[i] == ' ' || s[i] == '\t' ||
 		   s[i] == '\n' || s[i] == '\v' ||
-		   s[i] == '\f' || s[i] == '\r' )
+		   s[i] == '\f' || s[i] == '\r')
 	{
 		i++;
 	}
 
 	if (s[i] == '-')
 	{
-		signe = - 1;
+		signe = -signe;
 		i++;
 	} else if (s[i] == '+')
 	{
@@ -35,5 +35,5 @@ int _atoi(char *s)
 		resultat = (resultat * 10) + nombre;
 		i++;
 	}
-	return(signe * resultat);
+	return (signe * resultat);
 }
