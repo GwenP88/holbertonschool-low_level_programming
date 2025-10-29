@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * _strncpy - function that copies the string pointed to by src
- * @dest: address where the copied string will be stored;
- * @src: address where the source string is stored;
- * @n:numbers of bytes of src.
- * Return: the copy of the sting pointed to by src;
+ * _strcmp - function that compare two strings
+ * @s1: the first string;
+ * @s2: the second string;
+ * Return: the dufférence beeetween the two strings;
  */
 
 int _strcmp(char *s1, char *s2)
