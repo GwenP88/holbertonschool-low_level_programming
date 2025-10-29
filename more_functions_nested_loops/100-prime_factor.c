@@ -27,6 +27,6 @@ int main(void)
 				max_facteur = nbr_donne;
 		}
 
-	printf("Le plus grand facteur premier du nombre 612 852 475 143 est %lu\n", max_facteur);
+	printf("%lu\n", max_facteur);
 	return (0);
 }
