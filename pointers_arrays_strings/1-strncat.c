@@ -5,7 +5,7 @@
  *
  * @dest: destination string
  * @src: source string
- *
+ * @n: numbers of bytes of src.
  *
  * Return: a pointer to the resulting string dest.
  */
@@ -19,7 +19,6 @@ char *_strncat(char *dest, char *src, int n)
 	{
 		i++;
 	}
-
 
 	while (src[j] != '\0' && j <= n)
 	{
