@@ -14,7 +14,7 @@ void reverse_array(int *a, int n)
 	int *end;
 	int tmp;
 
-	end = &a[n-1];
+	end = &a[n - 1];
 
 	while (start < end)
 	{
@@ -24,6 +24,4 @@ void reverse_array(int *a, int n)
 		start++;
 		end--;
 	}
-
-	printf("\n");
 }
