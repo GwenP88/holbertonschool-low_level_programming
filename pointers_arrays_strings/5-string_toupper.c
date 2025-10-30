@@ -15,5 +15,8 @@ char *string_toupper(char *)
 	for (i = 0; i < '\0'; i++)
 	{
 		if (letter >= 'a' || letter <= 'z')
+		{
+
+		}
 	}
 }
