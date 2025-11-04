@@ -1,14 +1,21 @@
 #include "main.h"
 
 /**
- * _memset - function that fills memory with a constant byte.
- * @s: memory area pointed
- * @b: constant byte
- * @n: number of bytes
- * Return: the memory area pointed
+ * _print_rev_recursion - function that prints a string in reverse.
+ * @s: a pointed string
+ * Return: nothing because void function.
  */
 
-char *_memset(char *s, char b, unsigned int n)
+void _print_rev_recursion(char *s)
 {
+	if (*s == '\0')
+	{
+		_putchar('\n');
+		return;
+	} else if (*s != '\0')
+	{
+		_print_rev_recursion(s + 1);
+		_putchar(*s);
 
+	}
 }
