@@ -1,14 +1,19 @@
 #include "main.h"
 
 /**
- * _memset - function that fills memory with a constant byte.
- * @s: memory area pointed
- * @b: constant byte
- * @n: number of bytes
- * Return: the memory area pointed
+ * _strlen_recursion - function that returns the factorial of a given number.
+ * @n: a given interger
+ * Return: the factorial of a given number or -1 to indicate an error
  */
 
-char *_memset(char *s, char b, unsigned int n)
+int factorial(int n)
 {
-
+	if (n == 0 || n == 1)
+	{
+		return (1);
+	} else if ( n < 0)
+	{
+		return (-1);
+	}
+		return (n * factorial(n - 1));
 }
