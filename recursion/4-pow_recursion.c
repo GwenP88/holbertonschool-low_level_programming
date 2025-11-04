@@ -19,4 +19,6 @@ int _pow_recursion(int x, int y)
 		return (-1);
 	}
 	return (x * _pow_recursion(x, y - 1));
+	/* multiplication de la base x par le résultat de la fonction appelée avec l’exposant diminué de 1 (en pre ordre), puis reconstruction la multiplication de la base X pas à pas avec la valeur de x à la puissance y en post ordre
+	*/
 }
