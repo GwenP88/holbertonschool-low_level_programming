@@ -18,7 +18,7 @@ void print_diagsums(int *a, int size)
 	for (i = 0; i < size; i++)
 	{
 		/**
-		 * le numero de case est toujour a[i * size + j]
+		 * le "numero" de case : a[i * size + j]
 		 * a[i * size + j] == a[index]
 		 */
 
