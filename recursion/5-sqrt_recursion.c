@@ -2,7 +2,7 @@
 int test(int n, int i);
 
 /**
- * factorial - function that returns the natural square root
+ * _sqrt_recursion - function that returns the natural square root
  * of a number.
  * @n: a given interger
  * Return: the natural square root of a given number
