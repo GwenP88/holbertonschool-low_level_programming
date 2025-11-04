@@ -1,17 +1,14 @@
 #include "main.h"
+int test(int n, int i);
 
 /**
  * factorial - function that returns the natural square root
  * of a number.
- * test - function to check that n is the product of
- * an integer i multiplied by itself.
  * @n: a given interger
- * @i: a interger
  * Return: the natural square root of a given number
  * or -1 to indicate an error, if the number doesn't have a
  * natural square root.
  */
-int test(int n, int i);
 
 int _sqrt_recursion(int n)
 {
@@ -25,6 +22,15 @@ int _sqrt_recursion(int n)
 	}
 	return (test(n, 1));
 }
+
+/**
+ * test - function to check that n is the product of
+ * an integer i multiplied by itself.
+ * @n: a given interger
+ * @i: a interger
+ * Return: the integer i if n is the product of i * i,
+ * -1 if n isn't the product of i * i.
+ */
 
 int test(int n, int i)
 {
