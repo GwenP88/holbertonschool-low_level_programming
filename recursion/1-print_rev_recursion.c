@@ -18,10 +18,11 @@ void _print_rev_recursion(char *s)
 	{
 		_print_rev_recursion(s + 1);
 		/** on applique d'abord la récursivité pour aller au
-		* bout de la chaine (haut de pile)
+		* bout de la chaine (haut de pile) en pre ordre
 		*/
 		_putchar(*s);
 		/*on affiche les caractère un a un en redescandant
+		* en post odre
 		*/
 	}
 }

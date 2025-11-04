@@ -20,11 +20,11 @@ void _puts_recursion(char *s)
 	} else if (*s != '\0')
 	{
 		_putchar(*s);
-		/*imprime le caractère courant
+		/*imprime le caractère courant en pré ordre
 		*/
 		_puts_recursion(s + 1);
 		/* relance la focntion pour avancer et imprimer le
-		* caractère suivant
+		* caractère suivant en post ordre
 		*/
 	}
 }

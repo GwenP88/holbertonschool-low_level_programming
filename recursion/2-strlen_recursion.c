@@ -1,14 +1,20 @@
 #include "main.h"
+#include <stddef.h>
 
 /**
- * _memset - function that fills memory with a constant byte.
- * @s: memory area pointed
- * @b: constant byte
- * @n: number of bytes
- * Return: the memory area pointed
+ * _strlen_recursion - function that returns the length of a string.
+ * @s: a pointed string
+ * Return: an integer for the length of a string
  */
 
-char *_memset(char *s, char b, unsigned int n)
+int _strlen_recursion(char *s)
 {
-
+	if (*s == '\0' || s == NULL)
+	{
+		return (0);
+	} else if (*s != '\0')
+	{
+		_strlen_recursion(s + 1);
+	}
+	return (1 + _strlen_recursion(s + 1));
 }
