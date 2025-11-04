@@ -1,14 +1,21 @@
 #include "main.h"
 
 /**
- * _memset - function that fills memory with a constant byte.
- * @s: memory area pointed
- * @b: constant byte
- * @n: number of bytes
- * Return: the memory area pointed
+ * _pow_recursion - function that returns the value of x raised to the power of y.
+ * @x: a given interger
+ * @y: a given interger
+ * Return: the value of x raised to the power of y or -1 if y
+ * is less than 0
  */
 
-char *_memset(char *s, char b, unsigned int n)
+int _pow_recursion(int x, int y)
 {
-
+	if (y == 0)
+	{
+		return (1);
+	} else if (y < 0)
+	{
+		return (-1);
+	}
+	return (x * _pow_recursion(x, y - 1));
 }
