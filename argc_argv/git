@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m "init repository argc_argv" && git push
