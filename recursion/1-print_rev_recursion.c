@@ -22,7 +22,7 @@ void _print_rev_recursion(char *s)
 		*/
 		_putchar(*s);
 		/*on affiche les caractère un a un en redescandant
-		* en post odre
+		* en post odre tedt
 		*/
 	}
 }
