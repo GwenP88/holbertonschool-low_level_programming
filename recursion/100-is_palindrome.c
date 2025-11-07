@@ -55,7 +55,7 @@ int _test_string(char *s, int i, int j)
 }
 
 /**
- * _strlen_recursion - function that returns the length of a string.
+ * _strlen_string - function that returns the length of a string.
  * @s: a pointed string
  * Return: an integer for the length of a string
  */
