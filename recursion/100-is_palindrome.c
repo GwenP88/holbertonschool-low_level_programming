@@ -1,8 +1,9 @@
 #include "main.h"
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
 int _test_string(char *s, int i, int j);
+int _strlen_string(char *s);
 
 /**
  * is_palindrome - function that test if a string is a palindrome.
@@ -21,7 +22,7 @@ int is_palindrome(char *s)
 	else if (s[0] == '\0')
 		return (1);
 
-	len = strlen(s);
+	len = _strlen_string(s);
 	i = 0;
 	j = len - 1;
 
@@ -45,10 +46,25 @@ int _test_string(char *s, int i, int j)
 
 	if (i >= j)
 		return (1);
-	else if (s[i] != s[j])
+	if (s[i] != s[j])
 		return (0);
-	else
-		res_test = _test_string(s, i + 1, j - 1);
+
+	res_test = _test_string(s, i + 1, j - 1);
 
 	return (res_test);
+}
+
+/**
+ * _strlen_recursion - function that returns the length of a string.
+ * @s: a pointed string
+ * Return: an integer for the length of a string
+ */
+
+int _strlen_string(char *s)
+{
+	if (s == NULL || *s == '\0')
+	{
+		return (0);
+	}
+	return (1 + _strlen_string(s + 1));
 }
