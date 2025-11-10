@@ -19,14 +19,14 @@ char *_strdup(char *str)
 	int j = 0;
 	int length = 0;
 
+	if (str == NULL)
+		return (NULL);
+
 	while (str[j] != '\0')
 	{
 		length = str[j];
 		j++;
 	}
-
-	if (str == NULL)
-		return (NULL);
 
 	copy = malloc(length + 1 * (sizeof(char)));
 
