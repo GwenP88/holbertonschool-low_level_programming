@@ -8,7 +8,7 @@
  *
  * @str: a string to copy
  *
- * Return:
+ * Return: NULL if str is NULL or a pointer to the copy.
  *
  */
 
@@ -25,11 +25,12 @@ char *_strdup(char *str)
 		j++;
 	}
 
-	copy = malloc(length * (sizeof(char)));
-
 	if (str == NULL)
 		return (NULL);
-	else if (copy == NULL)
+
+	copy = malloc(length * (sizeof(char)));
+
+	if (copy == NULL)
 		return (NULL);
 
 	for (i = 0; i <= length; i++)
