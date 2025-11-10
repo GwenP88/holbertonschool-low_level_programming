@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "projet 1 pointers-arrays-strings task advc 8" && git push
+git add . && git commit -m "projet 2 recursion task advc 7" && git push
