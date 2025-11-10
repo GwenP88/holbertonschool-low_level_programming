@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 
-int str_length (char *str);
+int str_length(char *str);
 
 /**
  * str_concat - function that concatenates two strings.
@@ -9,7 +9,7 @@ int str_length (char *str);
  * @s1: the first string to concatenates
  * @s2: the second string to concatenates
  *
- * Return:
+ * Return: a pointer to the new string
  */
 
 char *str_concat(char *s1, char *s2)
@@ -34,11 +34,11 @@ char *str_concat(char *s1, char *s2)
 		new_string[i] = s1[i];
 
 	for (j = 0; j < length_s2; j++)
-    	new_string[length_s1 + j] = s2[j];
+		new_string[length_s1 + j] = s2[j];
 
 	new_string[length_str] = '\0';
 
-	return(new_string);
+	return (new_string);
 }
 
 /**
@@ -60,5 +60,5 @@ int str_length(char *str)
 	{
 		length++;
 	}
-	return(length);
+	return (length);
 }
