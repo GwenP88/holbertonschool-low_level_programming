@@ -16,9 +16,15 @@ char *_strdup(char *str)
 {
 	char *copy = NULL;
 	int i;
+	int j = 0;
 	int length = 0;
 
-	length = strlen(str);
+	while (str[j] != '\0')
+	{
+		length = str[j];
+		j++;
+	}
+
 	copy = malloc(length * (sizeof(char)));
 
 	if (str == NULL)
