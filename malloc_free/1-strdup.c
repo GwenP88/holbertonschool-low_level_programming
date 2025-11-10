@@ -1,10 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 
 /**
- * _strdup -
+ * _strdup - function returns a pointer to a new string
+ * which is a duplicate of the string str.
  *
- * @str:
+ * @str: a string to copy
  *
  * Return:
  *
@@ -12,5 +14,22 @@
 
 char *_strdup(char *str)
 {
+	char *copy = NULL;
+	int i;
+	int length = 0;
 
+	length = strlen(str);
+	copy = malloc(length * (sizeof(char)));
+
+	if (str == NULL)
+		return (NULL);
+	if (copy == NULL)
+		return (NULL);
+
+	for (i = 0; i < length; i++)
+		copy[i] = str[i];
+
+	return (copy);
+
+	free(copy);
 }
