@@ -28,12 +28,12 @@ char *_strdup(char *str)
 	if (str == NULL)
 		return (NULL);
 
-	copy = malloc(length * (sizeof(char)));
+	copy = malloc(length + 1 * (sizeof(char)));
 
 	if (copy == NULL)
 		return (NULL);
 
-	for (i = 0; i <= length; i++)
+	for (i = 0; i < length; i++)
 		copy[i] = str[i];
 
 	return (copy);
