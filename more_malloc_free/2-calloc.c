@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <string.h>
+char *_memset(char *s, char b, unsigned int n);
 
 /**
  * _calloc - function that allocates memory for an array, using malloc.
@@ -13,7 +14,7 @@
 
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int *ptr = 0;
+	void *ptr = 0;
 	unsigned int size_memory;
 
 	if (nmemb <= 0 || size <= 0)
@@ -26,8 +27,31 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (ptr == NULL)
 		return (NULL);
 
-	memset(ptr, 0, size_memory);
+	_memset(ptr, 0, size_memory);
 
 	return (ptr);
 	free(ptr);
+}
+
+
+/**
+ * _memset - function that fills memory with a constant byte.
+ * @s: memory area pointed
+ * @b: constant byte
+ * @n: number of bytes
+ * Return: the memory area pointed
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i;
+
+	if (n == 0 || s == 0)
+		return (s);
+
+	for (i = 0; i < n; i++)
+	{
+		s[i] = b;
+	}
+	return (s);
 }
