@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "task 1 - project 2 - more_malloc_free" && git push
+git add . && git commit -m "task 2 - project 2 - more_malloc_free" && git push
