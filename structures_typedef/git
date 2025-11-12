@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "task 4 - project 3 - structures_typedef" && git push
+git add . && git commit -m "task 5 - project 3 - structures_typedef" && git push
