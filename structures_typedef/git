@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m "Init - project 3 - structures_typedef" && git push
