@@ -3,12 +3,18 @@
 
 /* === Structures === */
 
+/**
+ * struct dog - chien
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
+ */
 typedef struct dog
 {
-    char *name;
-    float age;
+	char *name;
+	float age;
 	char *owner;
-}dog_t;
+} dog_t;
 
 /* === Prototypes === */
 
