@@ -4,10 +4,10 @@
 /* === Structures === */
 
 /**
- * struct dog - chien
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
+ * struct dog - information of dog
+ * @name: dog's name
+ * @age: dog's age
+ * @owner: dog's owner
  */
 typedef struct dog
 {
