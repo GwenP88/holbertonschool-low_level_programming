@@ -1,3 +1,5 @@
+![Shell Basics Banner](/assets/Holberton.png)
+
 # Structures & Typedef – Holberton School Project
 
 ## Introduction
