@@ -1,1 +1,1 @@
-not empty
+![Shell Basics Banner](/assets/holberton.png)
