@@ -1,4 +1,7 @@
 /.editorconfig
 /.vscode/c_cpp_properties.json
 /.vscode/settings.json
-
+/fptr
+/fptr_array
+/fptr.c
+/fptr_array.c
