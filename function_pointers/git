@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m "INIT projet function_pointers " && git push
