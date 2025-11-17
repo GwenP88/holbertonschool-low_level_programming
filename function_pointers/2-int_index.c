@@ -34,13 +34,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 		/* Appel de la fonction de comparaison sur l’élément courant du tableau.
 		 * cmp retourne :
 		 *   - 0  : si la condition n’est pas remplie
-		 *   - !=0: si la condition est remplie pour array[i]
 		 */
 
 		if (result != 0)
 			return (i);
-			/* Si fct cmp donne une valeur non nulle, on a trouvé
-		 	* le premier élément qui vérifie la condition → on renvoie son index.
+			/* Si fct cmp donne une valeur non nulle, alors
+		 	* on renvoie l'index du premier élément qui vérifie la condition.
 		 	*/
 		i++;
 		/* Sinon, on passe à l’élément suivant */
