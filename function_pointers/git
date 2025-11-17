@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "TASK 1 - V1 - projet function_pointers " && git push
+git add . && git commit -m "TASK 2 - V1 - projet function_pointers " && git push
