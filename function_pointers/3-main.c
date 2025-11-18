@@ -12,16 +12,8 @@
  * Return: the result of the operation
  */
 
-/* variable calc, int num1, int num2, operator */
-/* utiliser atoi pour convertir les operator in int */
-/* Return printf resultat de l'opération + \n */
-/* si nb arg incorrect = printf erreur + exit(98) */
-/* si operator invalide = printf erreur + exit(99) */
-/* si division / 0 = printf erreur + exit(100) */
-/* pas de while, do... while, for */
-/* 3 if max */
 
-int main(int argc, char * argv[])
+int main(int argc, char *argv[])
 {
 	int num1 = 0;
 	int num2 = 0;
@@ -31,7 +23,7 @@ int main(int argc, char * argv[])
 	if (argc != 4)
 	{
 		printf("Error\n");
-		exit (98);
+		exit(98);
 	}
 
 	num1 = atoi(argv[1]);
@@ -43,13 +35,13 @@ int main(int argc, char * argv[])
 	if (calc == NULL)
 	{
 		printf("Error\n");
-		exit (99);
+		exit(99);
 	}
 
-	if ((operator[0] = '/' && num2 == 0) || (operator[0] == '%' && num2 == 0))
+	if ((operator[0] == '/' || operator[0] == '%') && num2 == 0)
 	{
 		printf("Error\n");
-		exit (100);
+		exit(100);
 	}
 
 	printf("%d\n", calc(num1, num2));
