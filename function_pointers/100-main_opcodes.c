@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	}
 
 	nb_bytes = atoi(argv[1]);
-	if (argv[1] < 0)
+	if (nb_bytes < 0)
 	{
 		printf("Error\n");
 		return (2);
