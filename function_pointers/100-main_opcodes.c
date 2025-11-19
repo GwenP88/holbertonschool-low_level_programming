@@ -1,4 +1,3 @@
-#include "3-calc.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -17,7 +16,7 @@ int main(int argc, char *argv[])
 {
 	int i;
 	int nb_bytes;
-	char *ptr_main;
+	unsigned char *ptr_main;
 
 	if (argc != 2)
 	{
