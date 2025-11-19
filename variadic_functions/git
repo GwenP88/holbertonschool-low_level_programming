@@ -1,0 +1,2 @@
+#!/bin/bash
+git add . && git commit -m "INIT PROJET 2 - VARIADIC_FUNCTIONS" && git push
