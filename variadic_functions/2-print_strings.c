@@ -8,7 +8,7 @@
  *
  * @separator: pointer to the first caracter of the string
  * to be printed between strings
- * @n: the number of interger on parameters
+ * @n: the number of strings on parameters
  *
  * Return: nothing (void function)
  */
@@ -28,6 +28,8 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		if (separator != NULL && i < n - 1)
 			printf("%s", separator);
 
+		if (list == NULL)
+			printf("nil");
 		i++;
 	}
 	printf("\n");
