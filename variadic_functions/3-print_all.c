@@ -12,18 +12,15 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i = 0;
-	int integer;
+	int i = 0, integer;
 	double number;
-	char *string;
-	char *separator = "";
+	char *string, *separator = "";
 
 	if (format == NULL)
 	{
 		printf("\n");
 		return;
-	}
-	va_start(args, format);
+	} va_start(args, format);
 	while (format[i] != '\0')
 	{
 		switch (format[i])
@@ -50,8 +47,7 @@ void print_all(const char * const format, ...)
 				printf("%s%s", separator, string);
 				separator = ", ";
 			break;
-		}
-		i++;
+		} i++;
 	}
 	printf("\n");
 	va_end(args);
