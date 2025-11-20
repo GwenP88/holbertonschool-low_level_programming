@@ -19,7 +19,10 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	if (format == NULL)
+	{
+		printf("\n");
 		return;
+	}
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
