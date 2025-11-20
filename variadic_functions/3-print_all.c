@@ -18,10 +18,13 @@ void print_all(const char * const format, ...)
 	int integer;
 	double number;
 	char *string;
-	char *separator = " ";
+	char *separator = "";
 
 	if (format == NULL)
+	{
 		printf("\n");
+		return;
+	}
 
 	va_start(args, format);
 
