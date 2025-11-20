@@ -9,31 +9,27 @@
 int _atoi(char *s)
 {
 	int i = 0;
-	int resultat = 0;
-	int nombre;
+	int result = 0;
 	int signe = 1;
+	int digit;
 
-	while (s[i] == ' ' || s[i] == '\t' ||
-		   s[i] == '\n' || s[i] == '\v' ||
-		   s[i] == '\f' || s[i] == '\r')
+	while (!(s[i] >= '0' && s[i] <= '9') && s[i] != '\0')
 	{
-		i++;
+		if (s[i] == '-')
+		{
+			signe = -signe;
+			i++;
+		} else
+			i++;
+
+		if (s[i] == '\0')
+			return (0);
 	}
-
-	if (s[i] == '-')
-	{
-		signe = -signe;
-		i++;
-	} else if (s[i] == '+')
-	{
-		i++;
-	}
-
 	while (s[i] >= '0' && s[i] <= '9')
 	{
-		nombre = s[i] - '0';
-		resultat = (resultat * 10) + nombre;
+		digit = (s[i] - '0');
+		result = (result * 10) + digit;
 		i++;
 	}
-	return (signe * resultat);
+	return (result * signe);
 }
