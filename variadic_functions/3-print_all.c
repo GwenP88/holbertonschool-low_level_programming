@@ -20,10 +20,10 @@ void print_all(const char * const format, ...)
 	char *string;
 	char *separator = " ";
 
-	va_start(args, format);
-
 	if (format == NULL)
 		printf("\n");
+
+	va_start(args, format);
 
 	while (format[i] != '\0')
 	{
@@ -31,25 +31,21 @@ void print_all(const char * const format, ...)
 		{
 			case 'c':
 				integer = va_arg(args, int);
-				separator = ", ";
 				printf("%s", separator);
 				printf("%c", integer);
 			break;
 			case 'i':
 				integer = va_arg(args, int);
-				separator = ", ";
 				printf("%s", separator);
 				printf("%d", integer);
 			break;
 			case 'f':
 				number = va_arg(args, double);
-				separator = ", ";
 				printf("%s", separator);
 				printf("%f", number);
 			break;
 			case 's':
 				string = va_arg(args, char *);
-				separator = ", ";
 				printf("%s", separator);
 				if (string == NULL)
 					string = "(nil)";
@@ -57,6 +53,7 @@ void print_all(const char * const format, ...)
 			break;
 		}
 		i++;
+		separator = ", ";
 	}
 	printf("\n");
 	va_end(args);
