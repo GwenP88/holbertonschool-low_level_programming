@@ -34,8 +34,10 @@ int main(int argc, char *argv[])
 	ptr_main = (unsigned char *)main;
 	for (i = 0; i < nb_bytes; i++)
 	{
-		printf("%02x ", ptr_main[i]);
+		printf("%02x", ptr_main[i]);
 	}
+	if (i < nb_bytes - 1)
+		printf(" ");
 	printf("\n");
 	return (0);
 }
