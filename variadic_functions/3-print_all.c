@@ -11,17 +11,6 @@
  * Return: nothing (void function)
  */
 
- /**
- * not allowed to use for, goto, ternary operator, else, do ... while
- * 2 while loops max
- * 2 if max
- * maximum of 9 variables
- * allowed to use printf
- * c = char, i = integer, f = float, s = char *
- * si char * = ull = afficher nil
- */
-
-
 void print_all(const char * const format, ...)
 {
 	va_list args;
@@ -37,19 +26,19 @@ void print_all(const char * const format, ...)
 	{
 		switch (format[i])
 		{
-			case 'c' :
+			case 'c':
 				integer = va_arg(args, int);
 				printf("%c", integer);
 			break;
-			case 'i' :
+			case 'i':
 				integer = va_arg(args, int);
 				printf("%d", integer);
 			break;
-			case 'f' :
+			case 'f':
 				number = va_arg(args, double);
 				printf("%f", number);
 			break;
-			case 's' :
+			case 's':
 				string = va_arg(args, char *);
 				if (string == NULL)
 					printf("(nil)");
