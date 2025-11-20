@@ -20,7 +20,9 @@ void print_all(const char * const format, ...)
 	{
 		printf("\n");
 		return;
-	} va_start(args, format);
+	}
+	va_start(args, format);
+
 	while (format[i] != '\0')
 	{
 		switch (format[i])
@@ -47,7 +49,8 @@ void print_all(const char * const format, ...)
 				printf("%s%s", separator, string);
 				separator = ", ";
 			break;
-		} i++;
+		}
+		i++;
 	}
 	printf("\n");
 	va_end(args);
