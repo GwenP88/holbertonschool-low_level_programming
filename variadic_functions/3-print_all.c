@@ -31,24 +31,27 @@ void print_all(const char * const format, ...)
 			case 'c':
 				integer = va_arg(args, int);
 				printf("%s%c", separator, integer);
+				separator = ", ";
 			break;
 			case 'i':
 				integer = va_arg(args, int);
 				printf("%s%d", separator, integer);
+				separator = ", ";
 			break;
 			case 'f':
 				number = va_arg(args, double);
 				printf("%s%f", separator, number);
+				separator = ", ";
 			break;
 			case 's':
 				string = va_arg(args, char *);
 				if (string == NULL)
 					string = "(nil)";
 				printf("%s%s", separator, string);
+				separator = ", ";
 			break;
 		}
 		i++;
-		separator = ", ";
 	}
 	printf("\n");
 	va_end(args);
