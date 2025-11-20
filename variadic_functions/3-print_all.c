@@ -25,27 +25,22 @@ void print_all(const char * const format, ...)
 		printf("\n");
 		return;
 	}
-
 	va_start(args, format);
-
 	while (format[i] != '\0')
 	{
 		switch (format[i])
 		{
 			case 'c':
 				integer = va_arg(args, int);
-				printf("%s", separator);
-				printf("%c", integer);
+				printf("%s%c", separator, integer);
 			break;
 			case 'i':
 				integer = va_arg(args, int);
-				printf("%s", separator);
-				printf("%d", integer);
+				printf("%s%d", separator, integer);
 			break;
 			case 'f':
 				number = va_arg(args, double);
-				printf("%s", separator);
-				printf("%f", number);
+				printf("%s%f", separator, number);
 			break;
 			case 's':
 				string = va_arg(args, char *);
