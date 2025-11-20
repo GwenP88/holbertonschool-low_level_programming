@@ -5,9 +5,7 @@
 
 /**
  * print_all - function that prints anything.
- *
  * @format: a list of types of arguments passed to the function
- *
  * Return: nothing (void function)
  */
 
@@ -21,10 +19,8 @@ void print_all(const char * const format, ...)
 	char *separator = "";
 
 	if (format == NULL)
-	{
-		printf("\n");
 		return;
-	}
+
 	va_start(args, format);
 	while (format[i] != '\0')
 	{
