@@ -42,10 +42,9 @@ void print_all(const char * const format, ...)
 			break;
 			case 's':
 				string = va_arg(args, char *);
-				printf("%s", separator);
 				if (string == NULL)
 					string = "(nil)";
-				printf("%s", string);
+				printf("%s%s", separator, string);
 			break;
 		}
 		i++;
