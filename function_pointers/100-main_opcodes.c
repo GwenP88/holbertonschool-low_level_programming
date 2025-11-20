@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
 	for (i = 0; i < nb_bytes; i++)
 	{
 		printf("%02x", ptr_main[i]);
-	}
-	if (i < nb_bytes - 1)
+		if (i < nb_bytes - 1)
 		printf(" ");
+	}
 	printf("\n");
 	return (0);
 }
