@@ -18,9 +18,12 @@ void print_all(const char * const format, ...)
 	int integer;
 	double number;
 	char *string;
-	char *separator = ", ";
+	char *separator = " ";
 
 	va_start(args, format);
+
+	if (format == NULL)
+		printf("NULL");
 
 	while (format[i] != '\0')
 	{
@@ -44,9 +47,9 @@ void print_all(const char * const format, ...)
 					string = "(nil)";
 				printf("%s", string);
 			break;
-			if (format[i] != 0)
-				printf("%s", separator);
 		}
+		separator = ", ";
+		printf("%s", separator);
 		i++;
 	}
 	printf("\n");
