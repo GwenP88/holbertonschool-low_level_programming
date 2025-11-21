@@ -1,6 +1,6 @@
 ![Shell Basics Banner](/assets/holberton.png)
 
-# C – Functions and Nested Loops (`functions_nested_loops`)
+# C – Functions and Nested Loops
 
 ## Introduction
 
