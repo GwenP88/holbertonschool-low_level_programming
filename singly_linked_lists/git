@@ -1,2 +1,2 @@
 #!/bin/bash
-git add . && git commit -m "Project C - Singly linked lists - task 2 - V2" && git push
+git add . && git commit -m "Project C - Singly linked lists - task 3 - V1" && git push
