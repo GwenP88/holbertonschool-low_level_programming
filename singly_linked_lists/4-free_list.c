@@ -1,8 +1,8 @@
 #include "lists.h"
 
 /**
- * free_list -
- * @head:
+ * free_list - function that frees a list_t list.
+ * @head: the first element of the list
  * Return: nothing, void function
  */
 
@@ -16,8 +16,8 @@ void free_list(list_t *head)
 	while (head != NULL)
 	{
 		tmp = head->next;
-		free (head->str);
-		free (head);
+		free(head->str);
+		free(head);
 		head = tmp;
 	}
 }
