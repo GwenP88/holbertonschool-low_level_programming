@@ -17,9 +17,9 @@
  */
 typedef struct list_s
 {
-    char *str; /*Chaîne de caractères stockée dans le nœud*/
-    unsigned int len; /*Longueur de la chaîne*/
-    struct list_s *next; /*Pointeur vers le nœud suivant*/
+	char *str; /*Chaîne de caractères stockée dans le nœud*/
+	unsigned int len; /*Longueur de la chaîne*/
+	struct list_s *next; /*Pointeur vers le nœud suivant*/
 } list_t;
 
 /* === Prototypes === */
