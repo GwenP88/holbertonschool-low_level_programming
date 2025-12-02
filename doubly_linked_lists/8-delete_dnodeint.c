@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index index of a DLlist
+ * delete_dnodeint_at_index - function that deletes the
+ * node at index of a DLlist
  * @head: first elements of the list
  * @index: the index of the list where the new node should be deleted
  * Return: the number of nodes
@@ -9,9 +10,8 @@
 
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *dl_node;
-	dlistint_t *prev_node;
-	dlistint_t *next_node;
+	dlistint_t *dl_node = *head;
+	dlistint_t *prev_node, *next_node;
 	unsigned int i = 0;
 
 	if (head == NULL || *head == NULL)
@@ -19,7 +19,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 
 	if (index == 0)
 	{
-		dl_node = *head;
 		next_node = dl_node->next;
 		if (next_node)
 		{
@@ -31,7 +30,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		free(dl_node);
 		return (1);
 	}
-	dl_node = *head;
 	while (dl_node != NULL)
 	{
 		if (i == index)
