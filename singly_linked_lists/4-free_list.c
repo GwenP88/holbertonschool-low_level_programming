@@ -8,16 +8,16 @@
 
 void free_list(list_t *head)
 {
-	list_t *tmp;
+	list_t *tmp;  /* pointeur temporaire pour stocker le nœud suivant */
 
-	if (head == NULL)
-		return;
+	if (head == NULL)  /* si la liste est vide, il n’y a rien à libérer */
+		return; /* on quitte simplement la fonction */
 
-	while (head != NULL)
+	while (head != NULL) /* tant qu’il reste au moins un nœud à libérer */
 	{
-		tmp = head->next;
-		free(head->str);
-		free(head);
-		head = tmp;
+		tmp = head->next; /* on sauvegarde l’adresse du nœud suivant */
+		free(head->str); /* on libère la chaîne de caractères du nœud courant */
+		free(head); /* puis on libère le nœud lui-même */
+		head = tmp; /* on avance : head pointe maintenant sur le prochain nœud */
 	}
 }
