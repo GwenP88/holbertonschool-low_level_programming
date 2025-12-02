@@ -2,11 +2,19 @@
 
 /**
  * sum_dlistint - function that returns the sum of all the data (n) of a DLlist
- * @h: first elements of the list
+ * @head: first elements of the list
  * Return: the sum of all data
  */
 
 int sum_dlistint(dlistint_t *head)
 {
+	dlistint_t *current = head;
+	unsigned int sum = 0;
 
+	while (current != NULL)
+	{
+		sum += current->n;
+		current = current->next;
+	}
+	return (sum);
 }
