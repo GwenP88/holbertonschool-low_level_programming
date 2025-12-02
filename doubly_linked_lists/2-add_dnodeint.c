@@ -20,14 +20,14 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 	if (new == NULL)
 		return (NULL);
 
-	new->n = n;
-	new->prev = NULL;
-	new->next = *head;
+	new->n = n; /* valeur stockée dans le nœud */
+	new->prev = NULL; /* en tête de liste, il n’y a pas de précédent */
+	new->next = *head; /* le suivant devient l’ancien premier nœud */
 
-	if (*head != NULL)
+	if (*head != NULL) /* si la liste n’était pas vide, mettre à jour le prev de l’ancien head */
 	{
 		(*head)->prev = new;
 	}
-	*head = new;
+	*head = new; /* la tête de liste pointe maintenant vers le nouveau nœud */
 	return (new);
 }
