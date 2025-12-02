@@ -8,15 +8,16 @@
 
 size_t dlistint_len(const dlistint_t *h)
 {
-	size_t i = 0;
+	size_t i = 0; /* compteur d’éléments */
 
-	if (h == NULL)
+	if (h == NULL) /* liste vide */
 		return (0);
 
+	/* Parcours complet de la liste */
 	while (h != NULL)
 	{
-		i++;
-		h = h->next;
+		i++; /* incrémente le compteur */
+		h = h->next; /* passe au nœud suivant */
 	}
-	return (i);
+	return (i); /* renvoie le nombre total de nœuds */
 }

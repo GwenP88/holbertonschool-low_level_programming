@@ -8,15 +8,15 @@
 
 void free_dlistint(dlistint_t *head)
 {
-	dlistint_t *tmp;
+	dlistint_t *tmp; /* pointeur temporaire pour conserver le suivant */
 
 	if (head == NULL)
-		return;
+		return; /* rien à faire si la liste est déjà vide */
 
-	while (head != NULL)
+	while (head != NULL) /* Parcours de la liste et libération de chaque nœud */
 	{
-		tmp = head->next;
-		free(head);
-		head = tmp;
+		tmp = head->next; /* sauvegarde du nœud suivant */
+		free(head); /* libère le nœud courant */
+		head = tmp; /* passe au nœud suivant */
 	}
 }
