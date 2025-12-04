@@ -20,22 +20,35 @@ int main(int argc, char *argv[])
 	char buffer[1024];
 	ssize_t bytes_written, bytes_read;
 
+
+	/* Vérifie que le nombre d’arguments est correct (nom du programme + 2 fichiers) */
 	if (argc != 3)
 	{
 		error_handling("Usage: cp file_from file_to\n", 97, NULL);
 	}
+
+	/* Ouvre le fichier source en lecture seule */
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
 		error_handling("Error: Can't read from file %s\n", 98, argv[1]);
 	}
+
+	/* Ouvre/crée le fichier destination en écriture, en le tronquant si besoin
+	 * Permissions à la création : rw-rw-r-- (0664)
+	 */
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
 		error_handling("Error: Can't write to %s\n", 99, argv[2]);
 	}
+
+	/* Boucle de copie : lit le fichier source par blocs de 1024 octets
+	 * et écrit chaque bloc dans le fichier destination
+	 */
 	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
 	{
+		/* Écrit dans le fichier destination le nombre exact d’octets lus */
 		bytes_written = write(file_to, buffer, bytes_read);
 		if (bytes_written != bytes_read)
 		{
@@ -44,12 +57,16 @@ int main(int argc, char *argv[])
 			error_handling("Error: Can't write to %s\n", 99, argv[2]);
 		}
 	}
+
+	/* Si la dernière lecture a échoué (bytes_read == -1), gestion d’erreur spécifique */
 	if (bytes_read == -1)
 	{
 		close_file(file_from);
 		close_file(file_to);
 		error_handling("Error: Can't read from file %s\n", 98, argv[1]);
 	}
+
+	/* Fermeture normale des fichiers en fin de traitement (chemin de succès) */
 	close_file(file_from);
 	close_file(file_to);
 	return (0);
@@ -64,6 +81,7 @@ int main(int argc, char *argv[])
 
 void close_file(int file)
 {
+	/* Tente de fermer le descripteur de fichier */
 	if (close(file) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
