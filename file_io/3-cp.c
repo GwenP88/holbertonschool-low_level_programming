@@ -4,12 +4,14 @@
 #include <stdio.h>
 
 void close_file(int file);
+void error_handling(const char *message, int error_code, const char *arg);
 
 /**
- * main - check the code
+ * main - copies the content of one file into another
  * @argc: number of arguments passed to the program
  * @argv: array of argument strings (expects file_from and file_to)
- * Return: Always 0.
+ * Return: 0 on success,
+ * or the process exits with 97, 98, 99 or 100 on error.
  */
 
 int main(int argc, char *argv[])
@@ -20,38 +22,33 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+		error_handling("Usage: cp file_from file_to\n", 97, NULL);
 	}
 	file_from = open(argv[1], O_RDONLY);
 	if (file_from == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
+		error_handling("Error: Can't read from file %s\n", 98, argv[1]);
 	}
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-		exit(99);
+		error_handling("Error: Can't write to %s\n", 99, argv[2]);
 	}
 	while ((bytes_read = read(file_from, buffer, 1024)) > 0)
 	{
 		bytes_written = write(file_to, buffer, bytes_read);
 		if (bytes_written != bytes_read)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			close(file_from);
-			close(file_to);
-			exit(99);
+			close_file(file_from);
+			close_file(file_to);
+			error_handling("Error: Can't write to %s\n", 99, argv[2]);
 		}
 	}
 	if (bytes_read == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		close(file_from);
-		close(file_to);
-		exit(98);
+		close_file(file_from);
+		close_file(file_to);
+		error_handling("Error: Can't read from file %s\n", 98, argv[1]);
 	}
 	close_file(file_from);
 	close_file(file_to);
@@ -69,8 +66,25 @@ void close_file(int file)
 {
 	if (close(file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
 		exit(100);
 	}
 }
 
+/**
+ * error_handling - prints an error message and exits with a given status code
+ * @message: format string for the error message
+ * @error_code: exit status code to terminate the program
+ * @arg: optional string argument to be formatted into the message (may be NULL)
+ *
+ * Return: This function does not return on failure.
+ */
+
+void error_handling(const char *message, int error_code, const char *arg)
+{
+	if (arg == NULL)
+		dprintf(STDERR_FILENO, "%s", message);
+	else
+		dprintf(STDERR_FILENO, message, arg);
+	exit(error_code);
+}
