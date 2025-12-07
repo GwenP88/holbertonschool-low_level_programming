@@ -16,9 +16,12 @@
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
 	unsigned long int i;
+	 /* variable d'itération pour parcourir le tableau */
 
+	/* boucle de 0 jusqu'à size - 1 */
 	for (i = 0 ; i < size ; i++)
 	{
+		/* appelle la fonction action sur l'élément array[i] */
 		action(array[i]);
 	};
 }

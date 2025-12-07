@@ -13,6 +13,14 @@ unsigned long int key_index(const unsigned char *key, unsigned long int size)
 {
 	unsigned long int index;
 
+	/* On applique la fonction de hachage djb2 sur la clé,
+	 * puis on réduit le résultat dans l’intervalle [0, size - 1]
+	 * grâce à l’opérateur modulo :
+	 *    -> hash_djb2(key) produit un entier très grand
+	 *    -> % size le transforme en index valide pour le tableau
+	 */
 	index = hash_djb2(key) % size;
+
+	/* On renvoie l’index final, prêt à être utilisé pour accéder à ht->array[index] */
 	return (index);
 }

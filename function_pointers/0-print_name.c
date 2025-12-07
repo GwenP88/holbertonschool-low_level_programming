@@ -12,8 +12,9 @@
 
 void print_name(char *name, void (*f)(char *))
 {
+	/* Sécurité : on vérifie que les deux paramètres sont valides */
 	if (name == NULL || f == NULL)
 		return;
-
+	/* Appel de la fonction f avec le paramètre name*/
 	f(name);
 }
