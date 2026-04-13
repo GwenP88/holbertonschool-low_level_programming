@@ -1,279 +1,230 @@
-![Shell Basics Banner](/assets/holberton.png)
+# more_functions_nested_loops
 
-# C – More Functions and Nested Loops
-
-## Introduction
-
-This Holberton School project extended my work on functions and nested loops in C. After the previous `functions_nested_loops` project, this one pushed me further with more complex patterns: character classification, numeric formatting, drawing shapes in the terminal, and simple algorithmic problems (FizzBuzz, largest prime factor, printing integers without standard I/O formatting).  
-
-The focus was on reusing basic tools (_putchar, loops, conditionals) to build higher-level behaviors, while respecting strict C constraints and compilation flags.
+> Because once wasn't enough — more loops, more functions, more fun.
 
 ---
 
-## Learning Objectives
+## 📝 Description
 
-At the end of this project, I should be able to explain, without using Google:
-
-- What nested loops are and how to use them.
-- What a function is and how to use functions in C.
-- The difference between a **declaration** and a **definition** of a function.
-- What a function **prototype** is and why it is needed.
-- How **scope** of variables works (local vs. global, block scope).
-- What the `gcc` flags do:
-  - `-Wall`
-  - `-Werror`
-  - `-Wextra`
-  - `-pedantic`
-  - `-std=gnu89`
-- What **header files** are and how to use them with `#include`.
+This project is the natural continuation of my journey into C functions and nested loops. Building on what I learned previously, I tackled more complex challenges: drawing shapes in the terminal, implementing classic programming problems like FizzBuzz, and even going advanced with prime factorization and a custom integer printer. Each task pushed me to think more carefully about logic, output formatting, and writing clean, reusable C code.
 
 ---
 
-## What I Learned With This Project
+## 🎯 Learning Objectives
 
-- How to design and implement **utility functions** for:
-  - Character classification: `_isupper`, `_isdigit`.
-  - Arithmetic: `mul`, `print_number`.
-- How to control and format numeric output using only `_putchar`:
-  - Printing ranges of numbers.
-  - Building multi-line patterns with nested loops.
-- How to draw **ASCII shapes** in the terminal:
-  - Horizontal lines.
-  - Diagonals.
-  - Squares and triangles with aligned spacing.
-- How to solve small algorithmic problems:
-  - FizzBuzz between 1 and 100.
-  - Finding the largest prime factor of a large number.
-- How to handle **constraints** without shortcuts:
-  - Limited use of `_putchar`.
-  - No arrays, pointers, or `long` in some tasks.
-  - No hard-coded special values.
-- How to organize C code with:
-  - A shared header (`main.h`) for prototypes.
-  - Separate `.c` files per function.
-  - Strict compilation rules and flags.
+By completing this project, I am able to explain what nested loops are and demonstrate how to use them in non-trivial contexts such as drawing shapes and printing tables. I understand how to write, declare, and define functions in C, and I know the difference between a declaration and a definition. I can describe what a prototype is and how it is used within a header file. I have a clear understanding of variable scope and how it affects function behavior. I know the purpose of the `gcc` flags `-Wall -Werror -pedantic -Wextra -std=gnu89`, and I can use header files correctly with `#include` to share prototypes across multiple source files.
 
 ---
 
-## Exercises
+## 🛠️ Technologies Used
 
-### 0. `isupper`
-
-- **File:** `0-isupper.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `int _isupper(int c);`  
-- **Objective:**  
-  Implement a function that checks if a character is uppercase.  
-- **Expected behaviour:**  
-  - Return `1` if `c` is an uppercase letter (`'A'`–`'Z'`).  
-  - Return `0` otherwise.  
-- **Constraints:**  
-  - Do not use the standard `isupper` from `<ctype.h>`.  
-  - Follow the function prototype in `main.h`.
+This project is written entirely in **C** and compiled using **GCC** on **Ubuntu 20.04 LTS**. The code follows the **Betty style** (enforced via `betty-style.pl` and `betty-doc.pl`) and uses the flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. The standard library is forbidden in most tasks, with `_putchar` being the main output tool. Exceptions are clearly noted per task.
 
 ---
 
-### 1. `isdigit`
+## ⚙️ Requirements
 
-- **File:** `1-isdigit.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `int _isdigit(int c);`  
-- **Objective:**  
-  Implement a function that checks if a character is a digit (`0`–`9`).  
-- **Expected behaviour:**  
-  - Return `1` if `c` is a digit.  
-  - Return `0` otherwise.  
-- **Constraints:**  
-  - Do not use the standard `isdigit` from `<ctype.h>`.  
-  - Respect the prototype from `main.h`.
-
----
-
-### 2. Collaboration is multiplication
-
-- **File:** `2-mul.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `int mul(int a, int b);`  
-- **Objective:**  
-  Write a function that multiplies two integers.  
-- **Expected behaviour:**  
-  - Return the product `a * b` as an `int`.  
-- **Constraints:**  
-  - Simple pure function: no side effects, just return the result.
+- OS: Ubuntu 20.04 LTS
+- Compiler: `gcc` with flags `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- All files must end with a new line
+- Code must follow the **Betty** style
+- No global variables allowed
+- No more than 5 functions per file
+- Standard library functions (`printf`, `puts`, etc.) are **forbidden** unless explicitly stated
+- `_putchar` is allowed
+- All function prototypes (including `_putchar`) must be in `main.h`
+- `main.c` test files are not pushed to the repo
 
 ---
 
-### 3. The numbers speak for themselves
+## 🚀 Installation
 
-- **File:** `3-print_numbers.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_numbers(void);`  
-- **Objective:**  
-  Print the numbers from `0` to `9`, followed by a new line.  
-- **Expected behaviour:**  
-  - Output: `0123456789\n`.  
-- **Constraints:**  
-  - You can only use `_putchar` **twice** in your code.
-  - Use a loop to iterate from `0` to `9`.
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/more_functions_nested_loops
+```
 
 ---
 
-### 4. I believe in numbers and signs
+## ▶️ Usage / Execution
 
-- **File:** `4-print_most_numbers.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_most_numbers(void);`  
-- **Objective:**  
-  Print the numbers from `0` to `9`, except `2` and `4`, followed by a new line.  
-- **Expected behaviour:**  
-  - Output: `01356789\n`.  
-- **Constraints:**  
-  - You can only use `_putchar` **twice** in your code.
-  - Skip `2` and `4` using conditionals.
+Each task can be compiled and run using `gcc`. Example for task 0:
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-isupper.c -o 0-isuper
+./0-isuper
+```
+
+Refer to each task's compilation command for the correct file names and flags.
 
 ---
 
-### 5. Numbers constitute the only universal language
+## 📊 Project Progress
 
-- **File:** `5-more_numbers.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void more_numbers(void);`  
-- **Objective:**  
-  Print 10 times the numbers from `0` to `14`, followed by a new line.  
-- **Expected behaviour:**  
-  - 10 lines.
-  - Each line: `01234567891011121314`.  
-- **Constraints:**  
-  - You can only use `_putchar` **three** times in your code.
-  - Use nested loops:
-    - Outer loop: 10 iterations.
-    - Inner loop: `0` to `14`, managing two-digit numbers with `_putchar`.
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
+
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 100%</sub>
+</p>
 
 ---
 
-### 6. The shortest distance between two points is a straight line
+## ✨ Features
 
-- **File:** `6-print_line.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_line(int n);`  
-- **Objective:**  
-  Draw a straight horizontal line using the `_` character.  
-- **Expected behaviour:**  
-  - If `n > 0`, print `_` `n` times followed by `\n`.  
-  - If `n <= 0`, print only `\n`.  
-- **Constraints:**  
-  - You can only use `_putchar` to print.
-  - Use a simple loop for the `_` characters.
+### Task 0 - isupper
+
+- Mandatory
+- Write a function that checks for an uppercase character
+- Prototype: `int _isupper(int c);` — returns `1` if uppercase, `0` otherwise
+- Returns the correct integer value based on whether the character is uppercase
+
+**Files:** `0-isupper.c`
 
 ---
 
-### 7. I feel like I am diagonally parked in a parallel universe
+### Task 1 - isdigit
 
-- **File:** `7-print_diagonal.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_diagonal(int n);`  
-- **Objective:**  
-  Draw a diagonal line using the `\` character.  
-- **Expected behaviour:**  
-  - For each line `i` (starting at 0), print `i` spaces, then `\`, then `\n`.  
-  - If `n <= 0`, print only `\n`.  
-- **Constraints:**  
-  - Only `_putchar` is allowed.
-  - Use nested loops: one for lines, one for spaces.
+- Mandatory
+- Write a function that checks for a digit (0 through 9)
+- Prototype: `int _isdigit(int c);` — returns `1` if digit, `0` otherwise
+- Returns the correct integer value based on whether the character is a digit
+
+**Files:** `1-isdigit.c`
 
 ---
 
-### 8. You are so much sunshine in every square inch
+### Task 2 - Collaboration is multiplication
 
-- **File:** `8-print_square.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_square(int size);`  
-- **Objective:**  
-  Print a square made of `#` characters.  
-- **Expected behaviour:**  
-  - If `size > 0`, print `size` lines, each with `size` `#` characters.  
-  - If `size <= 0`, print only `\n`.  
-- **Constraints:**  
-  - Only `_putchar` is allowed.
-  - Use nested loops to build rows and columns.
+- Mandatory
+- Write a function that multiplies two integers
+- Prototype: `int mul(int a, int b);`
+- Returns the product of the two integers
+
+**Files:** `2-mul.c`
 
 ---
 
-### 9. Fizz-Buzz
+### Task 3 - The numbers speak for themselves
 
-- **File:** `9-fizz_buzz.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Objective:**  
-  Implement the classic FizzBuzz program: print the numbers from `1` to `100`, applying substitutions.  
-- **Expected behaviour:**  
-  - For multiples of 3: print `Fizz`.  
-  - For multiples of 5: print `Buzz`.  
-  - For multiples of both 3 and 5: print `FizzBuzz`.  
-  - Otherwise: print the number.  
-  - All tokens are separated by a space.
-  - End with a new line.  
-- **Constraints:**  
-  - You are allowed to use the standard library (e.g. `printf`).
-  - No extra punctuation; exactly one space between outputs.
+- Mandatory
+- Write a function that prints the numbers from 0 to 9 followed by a new line
+- Prototype: `void print_numbers(void);` — only `_putchar` may be used, at most twice
+- Prints `0123456789` followed by a newline
+
+**Files:** `3-print_numbers.c`
 
 ---
 
-### 10. Triangles
+### Task 4 - I believe in numbers and signs
 
-- **File:** `10-print_triangle.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_triangle(int size);`  
-- **Objective:**  
-  Print a right-aligned triangle made of `#` characters.  
-- **Expected behaviour:**  
-  - If `size > 0`, print `size` lines:
-    - On line `i` (1-based), print spaces then `#` so that the triangle is right-aligned.  
-  - If `size <= 0`, print only `\n`.  
-- **Constraints:**  
-  - Only `_putchar` is allowed.
-  - Use nested loops: one for lines, one for spaces, one for `#` characters.
+- Mandatory
+- Write a function that prints numbers from 0 to 9 excluding 2 and 4, followed by a new line
+- Prototype: `void print_most_numbers(void);` — only `_putchar` may be used, at most twice
+- Prints `01356789` followed by a newline
+
+**Files:** `4-print_most_numbers.c`
 
 ---
 
-### 11. The problem of distinguishing prime numbers from composite numbers…
+### Task 5 - Numbers constitute the only universal language
 
-- **File:** `100-prime_factor.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Objective:**  
-  Find and print the largest prime factor of the number `612852475143`, followed by a new line.  
-- **Expected behaviour:**  
-  - Compute the prime factors of `612852475143`.  
-  - Print the largest one, then `\n`.  
-- **Constraints:**  
-  - You are allowed to use the standard library.
-  - The program is compiled with:  
-    `gcc -Wall -pedantic -Werror -Wextra -std=gnu89 100-prime_factor.c -o 100-prime_factor -lm`
-  - Use an efficient factorization strategy to handle such a big number.
+- Mandatory
+- Write a function that prints 10 times the numbers from 0 to 14 followed by a new line
+- Prototype: `void more_numbers(void);` — only `_putchar` may be used, at most three times
+- Prints the sequence `01234567891011121314` ten times, each on its own line
+
+**Files:** `5-more_numbers.c`
 
 ---
 
-### 12. Numbers have life; they're not just symbols on paper
+### Task 6 - The shortest distance between two points is a straight line
 
-- **File:** `101-print_number.c`  
-- **Directory:** `more_functions_nested_loops`  
-- **Prototype:** `void print_number(int n);`  
-- **Objective:**  
-  Print an integer using only `_putchar`.  
-- **Expected behaviour:**  
-  - Handle positive numbers, zero, and negative numbers.  
-  - Print the decimal representation of `n`, followed by no extra spaces or newline (caller decides).  
-- **Constraints:**  
-  - Only `_putchar` can be used for output.
-  - You are not allowed to use:
-    - `long`
-    - arrays
-    - pointers
-  - You are not allowed to hard-code special values (like `INT_MIN`).
-  - Implementation must rely on arithmetic and recursion or iterative decomposition.
+- Mandatory
+- Write a function that draws a straight line of `_` characters in the terminal
+- Prototype: `void print_line(int n);` — prints only `\n` if `n <= 0`
+- Prints `n` underscores followed by a newline; prints only a newline if `n <= 0`
+
+**Files:** `6-print_line.c`
 
 ---
 
-## Conclusion
+### Task 7 - I feel like I am diagonally parked in a parallel universe
 
-This `more_functions_nested_loops` project solidified my understanding of functions, nested loops, and output formatting in C. I learned how to transform simple building blocks (`_putchar`, loops, conditionals) into reusable tools for numeric logic, pattern printing, and basic algorithms. These skills are directly transferable to larger low-level projects, where I'll need to manage more complex flows while still respecting strict constraints on the language and toolchain.
+- Mandatory
+- Write a function that draws a diagonal line of `\` characters in the terminal
+- Prototype: `void print_diagonal(int n);` — prints only `\n` if `n <= 0`
+- Prints a diagonal with each `\` offset by one space from the previous; prints only a newline if `n <= 0`
 
+**Files:** `7-print_diagonal.c`
+
+---
+
+### Task 8 - You are so much sunshine in every square inch
+
+- Mandatory
+- Write a function that prints a square of `#` characters followed by a new line
+- Prototype: `void print_square(int size);` — prints only `\n` if `size <= 0`
+- Prints a `size × size` square using `#` characters
+
+**Files:** `8-print_square.c`
+
+---
+
+### Task 9 - Fizz-Buzz
+
+- Mandatory
+- Write a program that prints numbers from 1 to 100, replacing multiples of 3 with `Fizz`, multiples of 5 with `Buzz`, and multiples of both with `FizzBuzz`
+- Numbers/words separated by a space — standard library allowed
+- Prints the correct FizzBuzz sequence from 1 to 100 on a single line
+
+**Files:** `9-fizz_buzz.c`
+
+---
+
+### Task 10 - Triangles
+
+- Mandatory
+- Write a function that prints a right-aligned triangle of `#` characters followed by a new line
+- Prototype: `void print_triangle(int size);` — prints only `\n` if `size <= 0`
+- Prints a triangle of height `size` with proper right-alignment using spaces
+
+**Files:** `10-print_triangle.c`
+
+---
+
+### Task 11 - The problem of distinguishing prime numbers from composite numbers and of resolving the latter into their prime factors is known to be one of the most important and useful in arithmetic
+
+- Advanced
+- Write a program that finds and prints the largest prime factor of `612852475143` followed by a new line
+- Compiled with `-lm` — standard library allowed
+- Prints the correct largest prime factor of the given number
+
+**Files:** `100-prime_factor.c`
+
+---
+
+### Task 12 - Numbers have life; they're not just symbols on paper
+
+- Advanced
+- Write a function that prints an integer using only `_putchar`
+- Prototype: `void print_number(int n);` — no `long`, no arrays, no pointers, no hard-coded special values
+- Correctly prints any integer, including negative values, using only `_putchar`
+
+**Files:** `101-print_number.c`
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Thanks to Holberton School for turning simple loops into an existential experience. And to everyone who told me FizzBuzz was "too easy" — you've clearly never tried to do it without `printf`.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: holbertonschool-low_level_programming
+- Project: more_functions_nested_loops
