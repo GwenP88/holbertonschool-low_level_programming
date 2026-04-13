@@ -1,265 +1,228 @@
-![Shell Basics Banner](/assets/holberton.png)
+# variables_if_else_while
 
-# Variables, if, else, while – C basics
-
-This project is my first deep dive into C control flow and basic data handling.  
-Through a series of short programs, I practiced using operators, conditions, loops, and `putchar`/`printf` to manage numbers and characters.  
-The goal was to become comfortable reading and writing small C programs without relying on external help, and to understand how the machine “sees” numbers, characters, and boolean logic.
+> `if` logic is the backbone of programming — `while` I still have things to learn, I'll keep looping through it.
 
 ---
 
-## Learning objectives
+## 📝 Description
 
-By the end of this project, I should be able to:
-
-- Use arithmetic operators in C and understand how they behave on integers.
-- Use logical / boolean operators to combine conditions.
-- Use relational operators to compare values.
-- Know which values are treated as “true” and “false” in C.
-- Write and combine `if` / `if ... else` statements.
-- Add and use comments to document code.
-- Declare variables of type `char`, `int`, `unsigned int`.
-- Assign values to variables and update them inside a loop.
-- Print `char`, `int` and `unsigned int` values with `printf`.
-- Use the `while` loop to repeat instructions under a condition.
-- Use variables inside a `while` loop to control iteration.
-- Print values with both `printf` and `putchar`.
-- Understand the basics of the ASCII character set.
-- Know the purpose of the `gcc` flags `-m32` and `-m64`.
+This project is the next step in my low-level programming journey at Holberton School. I dive into the fundamentals of C: variables, conditional statements, and loops. Through a series of progressively challenging programs, I practice declaring and using variables of types `char`, `int`, and `unsigned int`, print their values with `printf`, and control program flow with `if`, `if...else`, and `while`. I also explore the ASCII character set, understand boolean logic in C, and push my skills with combination-generation challenges that demand both precision and creativity — all within strict `putchar`-only constraints.
 
 ---
 
-## What I learned with this project
+## 🎯 Learning Objectives
 
-- How to combine conditions and operators to decide what to print.
-- How to extract digits from an integer (e.g. the last digit) with modulo and division.
-- How characters and integers are related through the ASCII table.
-- How to iterate over a range of letters or digits using loops and `putchar`.
-- How to build formatted outputs that follow strict specifications.
-- How to respect constraints (limited calls to `putchar`, no `char` variables, all code in `main`, etc.).
-- How to read and adapt starter code without breaking the random number generation logic.
+At the end of this project, I am able to explain what the arithmetic operators are and how to use them, as well as logical and relational operators and what values are considered `TRUE` or `FALSE` in C. I understand how to use the `if` and `if...else` statements to control program flow, and I know how to write comments in C. I can declare variables of types `char`, `int`, and `unsigned int`, assign values to them, and print those values correctly with `printf`. I know how to use the `while` loop and how to incorporate variables within it. I understand the ASCII character set and can navigate it programmatically. Finally, I understand the purpose of the `gcc` flags `-m32` and `-m64` and how they affect the size of data types at compilation time.
 
 ---
 
-## Repository structure
+## 🛠️ Technologies Used
 
-- **GitHub repository:** `holbertonschool-low_level_programming`
-- **Directory:** `variables_if_else_while/`
-- **Main files:**  
-  `0-positive_or_negative.c` to `9-print_comb.c`,  
-  `100-print_comb3.c`, `101-print_comb4.c`, `102-print_comb5.c`.
+All programs in this project are written in **C** and compiled on **Ubuntu 20.04 LTS** using `gcc` with the flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. Code style is enforced by the **Betty linter**. No external libraries are used beyond the C standard library, and many tasks are intentionally restricted to `putchar` only — no `printf`, no `puts`, just raw character output and a healthy dose of ASCII arithmetic.
 
 ---
 
-## Tasks
+## ⚙️ Requirements
 
-### 0. Positive anything is better than negative nothing
-- **File:** `0-positive_or_negative.c`  
-- **Objective:**  
-  Determine whether a randomly generated integer `n` is positive, zero, or negative.
-- **Expected behavior:**  
-  Print:  
-  `<number> is positive`  
-  or  
-  `<number> is zero`  
-  or  
-  `<number> is negative`  
-  followed by a newline, depending on the value of `n`.
-- **Constraints:**  
-  - Use the provided random initialization of `n` without modifying it.  
-  - Output format must match exactly the specification.
+- **OS:** Ubuntu 20.04 LTS
+- **Compiler:** `gcc` with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- **Allowed editors:** `vi`, `vim`, `emacs`
+- All files must end with a **new line**
+- No errors and no warnings during compilation
+- Use of `system` is **not allowed**
+- Code must follow the **Betty style** (checked with `betty-style.pl` and `betty-doc.pl`)
+- A `README.md` at the root of the project folder is mandatory
 
 ---
 
-### 1. The last digit
-- **File:** `1-last_digit.c`  
-- **Objective:**  
-  Extract and analyze the last digit of a random integer `n`.
-- **Expected behavior:**  
-  Print:  
-  `Last digit of <n> is <last_digit> and is greater than 5`  
-  or  
-  `Last digit of <n> is <last_digit> and is 0`  
-  or  
-  `Last digit of <n> is <last_digit> and is less than 6 and not 0`  
-  followed by a newline.
-- **Constraints:**  
-  - Use the provided code to generate `n`.  
-  - Do not modify the random initialization logic.  
-  - Respect the exact phrasing and spacing.
+## 🚀 Installation
+
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/variables_if_else_while
+```
 
 ---
 
-### 2. I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
-- **File:** `2-print_alphabet.c`  
-- **Objective:**  
-  Print the lowercase alphabet from `a` to `z`.
-- **Expected behavior:**  
-  Output: `abcdefghijklmnopqrstuvwxyz` followed by a newline.
-- **Constraints:**  
-  - Only `putchar` is allowed (no `printf`, `puts`, etc.).  
-  - All code must be inside `main`.  
-  - `putchar` may only be used twice.
+## ▶️ Usage / Execution
+
+Compile any C file and run the resulting executable:
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-positive_or_negative.c -o 0-positive_or_negative
+./0-positive_or_negative
+```
+
+Replace the filename and output name as needed for each task.
 
 ---
 
-### 3. alphABET
-- **File:** `3-print_alphabets.c`  
-- **Objective:**  
-  Print the alphabet in lowercase, then in uppercase, on a single line.
-- **Expected behavior:**  
-  Output: `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ` followed by a newline.
-- **Constraints:**  
-  - Only `putchar` is allowed.  
-  - All code must be inside `main`.  
-  - `putchar` may only be used three times.
+## 📊 Project Progress
+
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
+
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 100%</sub>
+</p>
 
 ---
 
-### 4. When I was having that alphabet soup, I never thought that it would pay off
-- **File:** `4-print_alphabt.c`  
-- **Objective:**  
-  Print the lowercase alphabet except the letters `q` and `e`.
-- **Expected behavior:**  
-  Output: `abcdfghijklmnoprstuvwxyz` followed by a newline.
-- **Constraints:**  
-  - Only `putchar` is allowed.  
-  - All code must be inside `main`.  
-  - `putchar` may only be used twice.  
-  - Letters `e` and `q` must not appear in the output.
+## ✨ Features
+
+### Task 0 - Positive anything is better than negative nothing
+
+- Mandatory
+- Complete a given source code to print whether the randomly assigned variable `n` is positive, zero, or negative
+- Must not modify the `rand`/`srand` section; must use `if`, `else if`, `else`
+- Outputs `<n> is positive`, `<n> is zero`, or `<n> is negative` followed by a new line
+
+**Files:** `0-positive_or_negative.c`
 
 ---
 
-### 5. Numbers
-- **File:** `5-print_numbers.c`  
-- **Objective:**  
-  Print all single-digit numbers of base 10 starting from 0.
-- **Expected behavior:**  
-  Output: `0123456789` followed by a newline.
-- **Constraints:**  
-  - All code must be inside `main`.
+### Task 1 - The last digit
+
+- Mandatory
+- Complete a given source code to print the last digit of the randomly assigned variable `n` and classify it
+- Must use modulo arithmetic; must not modify the `rand`/`srand` section
+- Outputs `Last digit of <n> is <last_digit> and is greater than 5`, `and is 0`, or `and is less than 6 and not 0`
+
+**Files:** `1-last_digit.c`
 
 ---
 
-### 6. Numberz
-- **File:** `6-print_numberz.c`  
-- **Objective:**  
-  Print all single-digit base-10 numbers using integer logic instead of character variables.
-- **Expected behavior:**  
-  Output: `0123456789` followed by a newline.
-- **Constraints:**  
-  - No variable of type `char` is allowed.  
-  - Only `putchar` is allowed.  
-  - `putchar` may only be used twice.  
-  - All code must be inside `main`.
+### Task 2 - I sometimes suffer from insomnia. And when I can't fall asleep, I play what I call the alphabet game
+
+- Mandatory
+- Print the alphabet in lowercase followed by a new line
+- Only `putchar` is allowed; all code in `main`; `putchar` used at most twice
+- Outputs `abcdefghijklmnopqrstuvwxyz` followed by a new line
+
+**Files:** `2-print_alphabet.c`
 
 ---
 
-### 7. Smile in the mirror
-- **File:** `7-print_tebahpla.c`  
-- **Objective:**  
-  Print the lowercase alphabet in reverse order.
-- **Expected behavior:**  
-  Output: `zyxwvutsrqponmlkjihgfedcba` followed by a newline.
-- **Constraints:**  
-  - Only `putchar` is allowed.  
-  - All code must be inside `main`.  
-  - `putchar` may only be used twice.
+### Task 3 - alphABET
+
+- Mandatory
+- Print the alphabet in lowercase then in uppercase, followed by a new line
+- Only `putchar` is allowed; all code in `main`; `putchar` used at most three times
+- Outputs `abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ` followed by a new line
+
+**Files:** `3-print_alphabets.c`
 
 ---
 
-### 8. Hexadecimal
-- **File:** `8-print_base16.c`  
-- **Objective:**  
-  Print all numbers of base 16 in lowercase (digits then letters).
-- **Expected behavior:**  
-  Output: `0123456789abcdef` followed by a newline.
-- **Constraints:**  
-  - Only `putchar` is allowed.  
-  - All code must be inside `main`.  
-  - `putchar` may only be used three times.
+### Task 4 - When I was having that alphabet soup, I never thought that it would pay off
+
+- Mandatory
+- Print the lowercase alphabet excluding the letters `q` and `e`, followed by a new line
+- Only `putchar` is allowed; all code in `main`; `putchar` used at most twice
+- Outputs all lowercase letters except `q` and `e`, followed by a new line
+
+**Files:** `4-print_alphabt.c`
 
 ---
 
-### 9. Patience, persistence and perspiration make an unbeatable combination for success
-- **File:** `9-print_comb.c`  
-- **Objective:**  
-  Print all possible combinations of single-digit numbers.
-- **Expected behavior:**  
-  Output:  
-  `0, 1, 2, 3, 4, 5, 6, 7, 8, 9`  
-  followed by a newline, with the exact same spacing and commas.
-- **Constraints:**  
-  - Combinations must be printed in ascending order.  
-  - Numbers must be separated by `, ` (comma and space).  
-  - Only `putchar` is allowed.  
-  - `putchar` may be used at most four times in the code.  
-  - No variable of type `char`.  
-  - All code must be inside `main`.
+### Task 5 - Numbers
+
+- Mandatory
+- Print all single-digit numbers of base 10 starting from `0`, followed by a new line
+- All code must be in `main`
+- Outputs `0123456789` followed by a new line
+
+**Files:** `5-print_numbers.c`
 
 ---
 
-### 10. Inventing is a combination of brains and materials. The more brains you use, the less material you need
-- **File:** `100-print_comb3.c`  
-- **Objective:**  
-  Print all possible different combinations of two digits.
-- **Expected behavior:**  
-  - Only the smallest combination for each pair appears (e.g. `01`, not `10`).  
-  - Output example starts:  
-    `01, 02, 03, ..., 89`  
-  - Numbers are printed in ascending order, with exactly two digits per combination.
-- **Constraints:**  
-  - Digits in a pair must be different.  
-  - Combinations are separated by `, ` (comma and space).  
-  - Only `putchar` is allowed.  
-  - `putchar` may be used at most five times.  
-  - No variable of type `char`.  
-  - All code must be inside `main`.
+### Task 6 - Numberz
+
+- Mandatory
+- Print all single-digit numbers of base 10 starting from `0`, followed by a new line
+- No `char` variables allowed; only `putchar` (used at most twice); all code in `main`
+- Outputs `0123456789` followed by a new line, using integer arithmetic instead of char variables
+
+**Files:** `6-print_numberz.c`
 
 ---
 
-### 11. The success combination in business is: Do what you do better... and: do more of what you do...
-- **File:** `101-print_comb4.c`  
-- **Objective:**  
-  Print all possible different combinations of three digits.
-- **Expected behavior:**  
-  - Only the smallest permutation for each triple appears (e.g. `012`, not `120` or `210`).  
-  - Output example starts:  
-    `012, 013, 014, ..., 789`  
-  - Combinations are printed in ascending order.
-- **Constraints:**  
-  - The three digits must all be different.  
-  - Combinations are separated by `, ` (comma and space).  
-  - Only `putchar` is allowed.  
-  - `putchar` may be used at most six times.  
-  - No variable of type `char`.  
-  - All code must be inside `main`.
+### Task 7 - Smile in the mirror
+
+- Mandatory
+- Print the lowercase alphabet in reverse, followed by a new line
+- Only `putchar` is allowed; all code in `main`; `putchar` used at most twice
+- Outputs `zyxwvutsrqponmlkjihgfedcba` followed by a new line
+
+**Files:** `7-print_tebahpla.c`
 
 ---
 
-### 12. Software is eating the World
-- **File:** `102-print_comb5.c`  
-- **Objective:**  
-  Print all possible combinations of two two-digit numbers.
-- **Expected behavior:**  
-  - Numbers range from `00` to `99`.  
-  - Each pair is printed as `ab cd` with a space between the two numbers.  
-  - All numbers are printed with two digits (e.g. `01`, not `1`).  
-  - Combinations are printed in ascending order.  
-  - Each combination is separated by `, ` (comma and space).  
-  - Example fragment:  
-    `00 01, 00 02, ..., 98 99`
-- **Constraints:**  
-  - `00 01` and `01 00` are treated as the same combination, only the smallest is printed.  
-  - Only `putchar` is allowed.  
-  - `putchar` may be used at most eight times.  
-  - No variable of type `char`.  
-  - All code must be inside `main`.
+### Task 8 - Hexadecimal
+
+- Mandatory
+- Print all characters of base 16 in lowercase (`0`–`9` then `a`–`f`), followed by a new line
+- Only `putchar` is allowed; all code in `main`; `putchar` used at most three times
+- Outputs `0123456789abcdef` followed by a new line
+
+**Files:** `8-print_base16.c`
 
 ---
 
-## Conclusion
+### Task 9 - Patience, persistence and perspiration make an unbeatable combination for success
 
-This project gave me a solid foundation in C basics: operators, conditions, loops, and character handling.  
-By working through each small task under strict constraints, I learned to think carefully about control flow, output formatting, and how integers and characters are represented in memory.  
-These skills are essential for the following C projects, where I will build more complex logic on top of these fundamentals.
+- Mandatory
+- Print all possible combinations of single-digit numbers, separated by `, `, in ascending order
+- Only `putchar` is allowed (at most four times); no `char` variables; all code in `main`
+- Outputs `0, 1, 2, 3, 4, 5, 6, 7, 8, 9` followed by a new line
+
+**Files:** `9-print_comb.c`
+
+---
+
+### Task 10 - Inventing is a combination of brains and materials. The more brains you use, the less material you need
+
+- Advanced
+- Print all unique two-digit combinations where both digits are different, in ascending order, separated by `, `
+- Only `putchar` is allowed (at most five times); no `char` variables; all code in `main`; `01` and `10` are the same combination
+- Outputs all ascending pairs from `01` to `89`, separated by `, `
+
+**Files:** `100-print_comb3.c`
+
+---
+
+### Task 11 - The success combination in business is: Do what you do better... and: do more of what you do...
+
+- Advanced
+- Print all unique three-digit combinations where all three digits are different, in ascending order, separated by `, `
+- Only `putchar` is allowed (at most six times); no `char` variables; all code in `main`; only the smallest ordering of each combination is printed
+- Outputs all ascending triples from `012` to `789`, separated by `, `
+
+**Files:** `101-print_comb4.c`
+
+---
+
+### Task 12 - Software is eating the World
+
+- Advanced
+- Print all unique combinations of two two-digit numbers (00–99), each pair printed with a space between them, separated by `, `, in ascending order
+- Only `putchar` is allowed (at most eight times); no `char` variables; all code in `main`; `00 01` and `01 00` are the same combination
+- Outputs all ascending pairs from `00 01` to `98 99`, formatted with two digits each
+
+**Files:** `102-print_comb5.c`
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Thanks to Holberton School for tasks that look deceptively simple ("just print the alphabet!") and then quietly add "but you can only use `putchar` twice." The challenge builds real understanding of how characters, integers, and ASCII values relate to each other. Thanks also to the `while` loop — the unsung hero of this entire project.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: `holbertonschool-low_level_programming`
+- Project: `variables_if_else_while`
