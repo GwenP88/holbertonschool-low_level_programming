@@ -1,246 +1,220 @@
-![Shell Basics Banner](/assets/holberton.png)
+# hello_world
 
-# C – Hello, World (`hello_world`)
-
-## Introduction
-
-This Holberton School project was my first contact with the C toolchain and the full compilation pipeline. I learned how `gcc` transforms a simple `main.c` file into preprocessed code, object files, assembly, and finally an executable. I also practiced the three main output functions in C (`puts`, `printf`, `putchar`), how to inspect the size of types with `sizeof`, and how to respect the official C coding style with Betty.  
-
-This project gave me a concrete view of what happens behind the scenes when we type `gcc main.c`, and how to structure, compile, and run simple C programs in a clean, controlled way.
+> My very first steps in C — where every semicolon is sacred and every warning is a lesson in humility.
 
 ---
 
-## Learning Objectives
+## 📝 Description
 
-At the end of this project, I should be able to explain, without using Google:
-
-- Why C programming is awesome.
-- Who invented C.
-- Who Dennis Ritchie, Brian Kernighan and Linus Torvalds are.
-- What happens when you type `gcc main.c`.
-- What an entry point is.
-- What `main` is and how it works.
-- How to print text using `printf`, `puts` and `putchar`.
-- How to get the size of a specific type using the unary operator `sizeof`.
-- How to compile using `gcc`.
-- What the default program name is when compiling with `gcc`.
-- What the official C coding style is and how to check code with `betty-style`.
-- How to find the right header to include when using a standard library function.
+This project marks the beginning of my journey into low-level programming with C at Holberton School. I get acquainted with the `gcc` compiler, learn how a C program goes from source code to executable, and write my first programs using the standard output functions `printf`, `puts`, and `putchar`. I also explore the different stages of compilation — preprocessing, compiling, assembling, and linking — using shell scripts to automate each step. It's the "Hello, World" of a much longer adventure.
 
 ---
 
-## What I Learned With This Project
+## 🎯 Learning Objectives
 
-- How the compilation pipeline is structured:
-  - Preprocessing → compilation → assembly → linking.
-  - The difference between `.c`, `.i`, `.o`, `.s` and the final executable.
-- How to:
-  - Run only the preprocessor on a C file and inspect the generated output.
-  - Compile without linking to produce an object file.
-  - Generate assembly in AT&T and Intel syntax.
-  - Produce an executable with a custom name.
-- How to write simple C programs that:
-  - Use `puts`, `printf` and `putchar` correctly.
-  - Print exactly specified strings, including punctuation and new lines.
-  - Print sizes of types using `sizeof`, and understand that results depend on the architecture (32-bit vs 64-bit).
-- How to respect constraints:
-  - Return `0` or `1` depending on the exercise requirements.
-  - Print to `stdout` vs `stderr` correctly.
-  - Avoid using forbidden functions (`printf` / `puts` in some tasks).
-  - Compile with strict flags (`-Wall -Werror -Wextra -pedantic -std=gnu89`) without warnings.
-- How to document and share technical understanding:
-  - Write and publish a blog post explaining what happens when you type `gcc main.c`.
-  - Share it on Medium and LinkedIn to practice technical communication in English.
+At the end of this project, I am able to explain why C programming is awesome and who invented it — Dennis Ritchie — as well as the contributions of Brian Kernighan and Linus Torvalds to the programming world. I understand what happens step by step when I type `gcc main.c`, what an entry point is, and what the `main` function does in a C program. I know how to print text using `printf`, `puts`, and `putchar`, and how to get the size of a specific type using the `sizeof` unary operator. I can compile C files using `gcc`, I know what the default program name is when no output name is specified, and I understand the official C coding style enforced by `betty-style`. I also know how to find the correct header to include when using a standard library function, and I understand how the return value of `main` influences the program's exit status.
 
 ---
 
-## Exercises
+## 🛠️ Technologies Used
 
-### 0. Preprocessor
-
-- **File:** `0-preprocessor`  
-- **Directory:** `hello_world`  
-- **Type:** Shell script  
-- **Objective:**  
-  Run a C file through the preprocessor and save the result into another file.  
-- **Expected behaviour:**  
-  - The C file name is provided in the environment variable `$CFILE`.  
-  - The script runs the preprocessor on `$CFILE`.  
-  - The preprocessed output is saved in a file named `c`.  
-- **Constraints:**  
-  - Use the preprocessor stage only (no compilation / linking).  
-  - No hard-coded filename; rely on `$CFILE`.
+This project is written in **C** (compiled with `gcc` on **Ubuntu 20.04 LTS**), with compilation flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. Shell scripts (Bash) are also used to automate compilation steps. Code style is enforced by the **Betty linter** (`betty-style.pl` and `betty-doc.pl`). No external libraries beyond the C standard library are used.
 
 ---
 
-### 1. Compiler
+## ⚙️ Requirements
 
-- **File:** `1-compiler`  
-- **Directory:** `hello_world`  
-- **Type:** Shell script  
-- **Objective:**  
-  Compile a C file but do not link.  
-- **Expected behaviour:**  
-  - The C file name is provided in the variable `$CFILE`.  
-  - The output file is named the same as the C file, but with the `.o` extension.  
-    - Example: `main.c` → `main.o`.  
-- **Constraints:**  
-  - Compilation only (no linking).
-  - No hard-coded filename; rely on `$CFILE`.
+**C files:**
+- **OS:** Ubuntu 20.04 LTS
+- **Compiler:** `gcc` with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- **Allowed editors:** `vi`, `vim`, `emacs`
+- All files must end with a **new line**
+- No errors and no warnings during compilation
+- Use of `system` is **not allowed**
+- Code must follow the **Betty style** (checked with `betty-style.pl` and `betty-doc.pl`)
 
----
-
-### 2. Assembler
-
-- **File:** `2-assembler`  
-- **Directory:** `hello_world`  
-- **Type:** Shell script  
-- **Objective:**  
-  Generate the assembly code of a C file and save it in an output file.  
-- **Expected behaviour:**  
-  - The C file name is provided in the variable `$CFILE`.  
-  - The output assembly file is named the same as the C file, but with the `.s` extension.  
-    - Example: `main.c` → `main.s`.  
-- **Constraints:**  
-  - Use `gcc` to generate assembly (AT&T syntax by default).
-  - No hard-coded filename.
+**Shell scripts:**
+- All scripts must be exactly **two lines long** (`wc -l file` must print `2`)
+- The first line of every script must be exactly `#!/bin/bash`
+- All files must be **executable**
 
 ---
 
-### 3. Name
+## 🚀 Installation
 
-- **File:** `3-name`  
-- **Directory:** `hello_world`  
-- **Type:** Shell script  
-- **Objective:**  
-  Compile a C file and create an executable named `cisfun`.  
-- **Expected behaviour:**  
-  - The C file name is provided in the variable `$CFILE`.  
-  - The script compiles the file and produces an executable `cisfun`.  
-- **Constraints:**  
-  - Use `gcc` for compilation and linking.
-  - No hard-coded C file name; rely on `$CFILE`.
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/hello_world
+```
 
----
+To install the Betty linter:
 
-### 4. Hello, puts
-
-- **File:** `4-puts.c`  
-- **Directory:** `hello_world`  
-- **Objective:**  
-  Write a C program that prints exactly:  
-  `"Programming is like building a multilingual puzzle`  
-  followed by a new line.  
-- **Expected behaviour:**  
-  - Output:  
-    `"Programming is like building a multilingual puzzle`  
-    followed by `\n`.  
-  - The program exits with return value `0`.  
-- **Constraints:**  
-  - Use the function `puts`.  
-  - Do **not** use `printf`.  
-  - Compile cleanly with:  
-    `gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-puts.c`.
+```bash
+git clone https://github.com/holbertonschool/Betty.git
+cd Betty
+sudo ./install.sh
+```
 
 ---
 
-### 5. Hello, printf
+## ▶️ Usage / Execution
 
-- **File:** `5-printf.c`  
-- **Directory:** `hello_world`  
-- **Objective:**  
-  Write a C program that prints exactly:  
-  `with proper grammar, but the outcome is a piece of art,`  
-  followed by a new line.  
-- **Expected behaviour:**  
-  - Output:  
-    `with proper grammar, but the outcome is a piece of art,`  
-    followed by `\n`.  
-  - The program returns `0`.  
-- **Constraints:**  
-  - Use the function `printf`.  
-  - Do **not** use `puts`.  
-  - Program must compile without warnings using:  
-    `gcc -Wall`.
+**For shell scripts**, make the file executable and run it:
 
----
+```bash
+chmod +x ./0-preprocessor
+export CFILE=main.c
+./0-preprocessor
+```
 
-### 6. Size is not grandeur, and territory does not make a nation
+**For C programs**, compile and run:
 
-- **File:** `6-size.c`  
-- **Directory:** `hello_world`  
-- **Objective:**  
-  Write a C program that prints the size of various types on the computer it is compiled and run on.  
-- **Expected behaviour:**  
-  - Print lines in the exact format:  
-    - `Size of a char: X byte(s)`  
-    - `Size of an int: X byte(s)`  
-    - `Size of a long int: X byte(s)`  
-    - `Size of a long long int: X byte(s)`  
-    - `Size of a float: X byte(s)`  
-  - The program returns `0`.  
-  - The expected sizes might differ between 32-bit (`-m32`) and 64-bit (`-m64`) compilation, but the format stays identical.  
-- **Constraints:**  
-  - Use `sizeof` to query sizes.  
-  - Warnings are allowed, but behaviour must match the example.  
+```bash
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 4-puts.c -o puts_demo
+./puts_demo
+```
+
+**To check style with Betty:**
+
+```bash
+betty filename.c
+```
 
 ---
 
-### 7. What happens when you type `gcc main.c`  *(advanced)*
+## 📊 Project Progress
 
-- **Type:** Blog post (external content)  
-- **Objective:**  
-  Write a blog post that explains all the steps of compilation using `gcc`.  
-- **Expected behaviour:**  
-  - The blog post:
-    - Uses `gcc` as the compiler in all examples.
-    - Explains the stages: preprocessing, compilation, assembly, linking.
-    - Includes command line examples (`gcc -E`, `gcc -c`, `gcc -S`, etc.).
-    - Has at least one picture at the top of the post.
-  - The blog is written in English.  
-  - The post is published on Medium or LinkedIn and shared on LinkedIn.  
-- **Links:**  
-  - Blog URL:  
-    `https://medium.com/@gpichot_63497/from-a-to-z-understanding-c-compilation-with-gcc-bf27f35c9c7e`  
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
+
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 100%</sub>
+</p>
 
 ---
 
-### 8. Intel  *(advanced)*
+## ✨ Features
 
-- **File:** `100-intel`  
-- **Directory:** `hello_world`  
-- **Type:** Shell script  
-- **Objective:**  
-  Generate the assembly code (Intel syntax) of a C file and save it in an output file.  
-- **Expected behaviour:**  
-  - The C file name is provided in the variable `$CFILE`.  
-  - The script generates an assembly file with Intel syntax, named like the C file but with `.s` extension.  
-    - Example: `main.c` → `main.s`.  
-- **Constraints:**  
-  - Use `gcc` options to switch to Intel syntax (e.g. `-S -masm=intel`).
-  - No hard-coded filename.
+### Task 0 - Preprocessor
+
+- Mandatory
+- Write a script that runs a C file (stored in `$CFILE`) through the preprocessor and saves the result into a file named `c`
+- Must use `gcc -E`
+- Produces the preprocessed output file `c` from the source stored in `$CFILE`
+
+**Files:** `0-preprocessor`
 
 ---
 
-### 9. UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity  *(advanced)*
+### Task 1 - Compiler
 
-- **File:** `101-quote.c`  
-- **Directory:** `hello_world`  
-- **Objective:**  
-  Write a C program that prints exactly:  
-  `and that piece of art is useful" - Dora Korpar, 2015-10-19`  
-  followed by a new line, to the **standard error**.  
-- **Expected behaviour:**  
-  - Text is printed to `stderr` (file descriptor `2`).  
-  - Program returns `1`.  
-  - Output matches the required string exactly (quotes, commas, date, spaces, newline).  
-- **Constraints:**  
-  - Do **not** use any function listed in the `NAME` section of `man 3 printf` or `man 3 puts`.  
-  - The program must compile without warnings using:  
-    `gcc -Wall -Werror -Wextra -pedantic -std=gnu89`.  
+- Mandatory
+- Write a script that compiles a C file without linking; output file named after the source with `.o` extension
+- Must use `gcc -c`; the C file name is stored in `$CFILE`
+- Produces a `.o` object file with the same base name as the source file
+
+**Files:** `1-compiler`
 
 ---
 
-## Conclusion
+### Task 2 - Assembler
 
-This `hello_world` project established my foundation in C: I learned how the compilation pipeline works, how to control `gcc` to stop at each stage (preprocessor, object, assembly, executable), and how to use the basic C output functions correctly. I also practiced respecting strict compilation flags and coding style rules, and I documented my understanding through a public blog post. These skills are now the baseline for all future C projects in my low-level programming journey.
+- Mandatory
+- Write a script that generates the assembly code of a C file; output file named after the source with `.s` extension
+- Must use `gcc -S`; the C file name is stored in `$CFILE`
+- Produces a `.s` assembly file with the same base name as the source file
+
+**Files:** `2-assembler`
+
+---
+
+### Task 3 - Name
+
+- Mandatory
+- Write a script that compiles a C file and creates an executable named `cisfun`
+- Must use `gcc -o cisfun`; the C file name is stored in `$CFILE`
+- Produces an executable named `cisfun`
+
+**Files:** `3-name`
+
+---
+
+### Task 4 - Hello, puts
+
+- Mandatory
+- Write a C program that prints `"Programming is like building a multilingual puzzle` followed by a new line
+- Must use `puts`; `printf` is not allowed; program must return `0`
+- Outputs the exact string to stdout and exits with status `0`
+
+**Files:** `4-puts.c`
+
+---
+
+### Task 5 - Hello, printf
+
+- Mandatory
+- Write a C program that prints `with proper grammar, but the outcome is a piece of art,` followed by a new line
+- Must use `printf`; `puts` is not allowed; must compile without warnings with `-Wall`
+- Outputs the exact string to stdout and returns `0`
+
+**Files:** `5-printf.c`
+
+---
+
+### Task 6 - Size is not grandeur, and territory does not make a nation
+
+- Mandatory
+- Write a C program that prints the size (in bytes) of `char`, `int`, `long int`, `long long int`, and `float`
+- Must use `sizeof`; warnings are allowed; program must return `0`
+- Outputs the size of each type, with results that differ between 32-bit and 64-bit compilation
+
+**Files:** `6-size.c`
+
+---
+
+### Task 7 - What happens when you type gcc main.c
+
+- Advanced
+- Write a blog post explaining all the steps of compilation using `gcc`, with command-line examples
+- Must include at least one image; published on Medium or LinkedIn; shared on LinkedIn; written in English
+- A detailed, beginner-friendly article covering preprocessing, compiling, assembling, and linking
+
+**Files:** *(blog post URL)*
+
+---
+
+### Task 8 - Intel
+
+- Advanced
+- Write a script that generates the assembly code in Intel syntax from a C file; output file has `.s` extension
+- Must use `gcc -S -masm=intel`; the C file name is stored in `$CFILE`
+- Produces a `.s` file using Intel assembly syntax
+
+**Files:** `100-intel`
+
+---
+
+### Task 9 - UNIX is basically a simple operating system, but you have to be a genius to understand the simplicity
+
+- Advanced
+- Write a C program that prints `and that piece of art is useful" - Dora Korpar, 2015-10-19` followed by a new line, to **standard error**
+- `printf` and `puts` (and any function from their man pages) are not allowed; must return `1`; must compile without warnings with `-Wall`
+- Outputs the exact string to stderr and exits with status `1`
+
+**Files:** `101-quote.c`
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+A warm thank you to Holberton School for easing me into C with gentle tasks like "figure out what a compiler actually does." Jokes aside, the structured progression from preprocessor to linker is genuinely enlightening. Thanks also to Dennis Ritchie — without him, none of this would compile.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: `holbertonschool-low_level_programming`
+- Project: `hello_world`
