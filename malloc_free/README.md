@@ -1,126 +1,184 @@
-![Shell Basics Banner](/assets/holberton.png)
+# malloc_free
 
-# malloc, free – Holberton School Project
-
-## Introduction
-This project is my first real step into **dynamic memory allocation** in C.  
-Up to this point, most variables I used were automatic (allocated on the stack, with lifetimes tied to the current scope). Here, I had to take explicit control over memory on the heap using `malloc` and `free`.
-
-Working through these tasks, I learned when it makes sense to allocate memory dynamically (for variable-size data, grids, strings built at runtime), how to handle allocation failures safely, and how to use tools like `valgrind` to check that everything is properly freed and that no memory leaks are left behind.
+> Stack memory is nice, but sometimes you need to build your own — `malloc` gives you the keys to the heap.
 
 ---
 
-## Concepts Learned
+## 📝 Description
 
-- Difference between **automatic allocation** and **dynamic allocation**:
-  - Automatic: variables on the stack, managed by the compiler, limited lifetime (scope-based).
-  - Dynamic: memory on the heap, managed manually via `malloc`/`free`, flexible lifetime.
-- `malloc`:
-  - How to request a specific number of bytes.
-  - How to interpret the returned pointer and handle `NULL` when allocation fails.
-- `free`:
-  - How to release dynamically allocated memory.
-  - Why every successful `malloc` must have a matching `free`.
-- When to use dynamic allocation:
-  - For arrays or data structures whose size is only known at runtime.
-  - For objects that must outlive the scope that created them.
-- Using `valgrind`:
-  - Detecting memory leaks.
-  - Verifying that all allocated blocks have been freed.
-  - Ensuring no invalid reads/writes occur.
+This project is part of my low-level programming curriculum at Holberton School. It introduces dynamic memory allocation in C: the difference between automatic (stack) and dynamic (heap) allocation, and how to use `malloc` and `free` to take manual control of memory. Through a series of functions, I allocate memory at runtime, duplicate strings, concatenate them dynamically, build 2D grids, and properly free all allocated resources. I also learn to use `valgrind` to verify that no memory is leaked. Managing your own memory: great power, great responsibility, and the occasional segfault to keep things interesting.
 
 ---
 
-## Tasks
+## 🎯 Learning Objectives
 
-### `0-create_array` – Float like a butterfly, sting like a bee
-**Instruction:** Write a function that creates an array of chars and initializes it with a specific character.  
-Prototype: `char *create_array(unsigned int size, char c);`
-
-**Constraints:**
-- Return `NULL` if `size == 0`.
-- Return a pointer to the newly allocated array, or `NULL` if allocation fails.
-- The entire array must be initialized with the character `c`.
-
-**What I learned:**  
-How to allocate a simple one-dimensional buffer with `malloc`, check for failures, initialize every element, and return it to the caller for later use and freeing.
+At the end of this project, I am able to explain the difference between automatic allocation (on the stack, managed by the compiler) and dynamic allocation (on the heap, managed manually). I understand what `malloc` and `free` do, how to use them, and why dynamic allocation is necessary when the size of data is not known at compile time or when data needs to outlive the function that created it. I also know how to use `valgrind` to detect memory leaks and ensure that every allocated block is properly freed.
 
 ---
 
-### `1-strdup` – The woman who has no imagination has no wings
-**Instruction:** Write a function that returns a pointer to a newly allocated space in memory containing a copy of the string given as a parameter.  
-Prototype: `char *_strdup(char *str);`
+## 🛠️ Technologies Used
 
-**Constraints:**
-- If `str == NULL`, return `NULL`.
-- On success, return a pointer to a new string that is a duplicate of `str`.
-- Memory must be obtained with `malloc` and can be freed with `free`.
-- Return `NULL` if there is insufficient memory.
-
-**What I learned:**  
-How to:
-- Compute string length.
-- Allocate exactly enough memory for a copy (including the null terminator).
-- Copy the contents manually.
-This is a direct, low-level understanding of what a standard function like `strdup` does internally.
+All programs in this project are written in **C** and compiled on **Ubuntu 20.04 LTS** using `gcc` with the flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. Code style is enforced by the **Betty linter**. The only C standard library functions permitted are `malloc` and `free` — everything else, including `printf`, `puts`, `calloc`, and `realloc`, is forbidden. Memory correctness is verified using **Valgrind**.
 
 ---
 
-### `2-str_concat` – He who is not courageous enough to take risks will accomplish nothing in life
-**Instruction:** Write a function that concatenates two strings into a newly allocated buffer.  
-Prototype: `char *str_concat(char *s1, char *s2);`
+## ⚙️ Requirements
 
-**Constraints:**
-- The result is `s1` followed by `s2`, null-terminated.
-- If `s1` or `s2` is `NULL`, treat it as an empty string.
-- Return `NULL` if allocation fails.
-
-**What I learned:**  
-How to:
-- Handle `NULL` inputs gracefully.
-- Calculate the total required size based on the lengths of both strings.
-- Concatenate two strings into a freshly allocated block instead of relying on fixed-size arrays.
-
----
-
-### `3-alloc_grid` – If you even dream of beating me you'd better wake up and apologize
-**Instruction:** Write a function that returns a pointer to a 2-dimensional array of integers.  
-Prototype: `int **alloc_grid(int width, int height);`
-
-**Constraints:**
-- Each element of the grid must be initialized to `0`.
-- If `width` or `height` is `0` or negative, return `NULL`.
-- On failure (any allocation step), return `NULL`.
-
-**What I learned:**  
-How to:
-- Allocate a 2D structure using `malloc` (array of pointers plus rows).
-- Initialize every element.
-- Think carefully about error handling: if one allocation fails, previously allocated memory must be cleaned up to avoid leaks.
+- **OS:** Ubuntu 20.04 LTS
+- **Compiler:** `gcc` with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- **Allowed editors:** `vi`, `vim`, `emacs`
+- All files must end with a **new line**
+- No errors and no warnings during compilation
+- Global variables are **not allowed**
+- No more than **5 functions per file**
+- Only `malloc` and `free` are allowed from the standard library — `printf`, `puts`, `calloc`, `realloc`, etc. are **forbidden**
+- `_putchar` is allowed; do not push `_putchar.c`
+- All function prototypes and `_putchar` must be declared in `main.h`
+- Do not push `main.c` test files
+- Code must follow the **Betty style**
 
 ---
 
-### `4-free_grid` – It's not bragging if you can back it up
-**Instruction:** Write a function that frees a 2-dimensional grid previously created by `alloc_grid`.  
-Prototype: `void free_grid(int **grid, int height);`
+## 🚀 Installation
 
-**Constraints:**
-- Function must correctly free all rows and then the array of row pointers.
-- It is compiled together with `alloc_grid.c`, so both must be compatible.
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/malloc_free
+```
 
-**What I learned:**  
-How to:
-- Implement the “destructor” for a 2D dynamically allocated structure.
-- Ensure that every `malloc` in `alloc_grid` has a corresponding `free` in `free_grid`.
-- Validate the solution with `valgrind` to confirm there are no memory leaks.
+To install Valgrind for memory leak checking:
+
+```bash
+sudo apt install valgrind
+```
 
 ---
 
-## Conclusion
-This project taught me to treat dynamic memory as a resource that I am fully responsible for:
+## ▶️ Usage / Execution
 
-- I practiced allocating and freeing simple buffers, duplicated strings, concatenations, and 2D arrays.
-- I learned how to handle errors and edge cases like `NULL` inputs and invalid sizes.
-- I used `valgrind` to verify that my code leaves no memory leaks.
+Compile any `.c` file with its test main and run:
 
-These skills are a foundation for any low-level C work: data structures, file processing, and bigger projects all rely on correct dynamic memory management, and this project gave me the discipline and patterns to handle it properly.
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c 0-create_array.c -o a
+./a
+```
+
+To check for memory leaks with Valgrind:
+
+```bash
+valgrind ./4-free_grid
+```
+
+Replace filenames as appropriate for each task.
+
+---
+
+## 📊 Project Progress
+
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
+
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 0%</sub>
+</p>
+
+---
+
+## ✨ Features
+
+### Task 0 - Float like a butterfly, sting like a bee
+
+- Mandatory
+- Write a function that allocates an array of `size` chars and initializes every byte to the character `c`; returns `NULL` if `size` is `0` or if `malloc` fails
+- Prototype: `char *create_array(unsigned int size, char c);` — only `malloc` and `free` allowed
+- Returns a pointer to a heap-allocated array filled with `c`, or `NULL` on failure or zero size
+
+**Files:** `0-create_array.c`
+
+---
+
+### Task 1 - The woman who has no imagination has no wings
+
+- Mandatory
+- Write a function that returns a pointer to a newly allocated copy of a string; returns `NULL` if `str` is `NULL` or if `malloc` fails
+- Prototype: `char *_strdup(char *str);` — only `malloc` and `free` allowed
+- Returns a heap-allocated duplicate of the input string, or `NULL` on failure
+
+**Files:** `1-strdup.c`
+
+---
+
+### Task 2 - He who is not courageous enough to take risks will accomplish nothing in life
+
+- Mandatory
+- Write a function that concatenates two strings into a newly allocated buffer; `NULL` arguments are treated as empty strings; returns `NULL` on failure
+- Prototype: `char *str_concat(char *s1, char *s2);` — only `malloc` and `free` allowed
+- Returns a heap-allocated string containing `s1` followed by `s2`, null-terminated, or `NULL` on failure
+
+**Files:** `2-str_concat.c`
+
+---
+
+### Task 3 - If you even dream of beating me you'd better wake up and apologize
+
+- Mandatory
+- Write a function that allocates a 2D array of integers (`width` × `height`), initialized to `0`; returns `NULL` if `width` or `height` is `0` or negative, or if `malloc` fails
+- Prototype: `int **alloc_grid(int width, int height);` — only `malloc` and `free` allowed
+- Returns a pointer to an array of `height` integer row pointers, each pointing to a zero-initialized row of `width` integers
+
+**Files:** `3-alloc_grid.c`
+
+---
+
+### Task 4 - It's not bragging if you can back it up
+
+- Mandatory
+- Write a function that frees a 2D integer grid previously created by `alloc_grid`
+- Prototype: `void free_grid(int **grid, int height);` — compiled together with `3-alloc_grid.c`
+- Frees all row pointers and the pointer array itself; Valgrind reports zero leaks after execution
+
+**Files:** `4-free_grid.c`
+
+---
+
+### Task 5 - It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe
+
+- Advanced - **Not completed yet, but definitely planned (and slightly haunting me).**
+- Write a function that concatenates all program arguments into a single string where each argument is followed by `\n`; returns `NULL` if `ac == 0`, `av == NULL`, or `malloc` fails
+- Prototype: `char *argstostr(int ac, char **av);` — only `malloc` and `free` allowed
+- Returns a heap-allocated string containing all arguments separated by `\n`, or `NULL` on failure
+
+**Files:** `100-argstostr.c`
+
+---
+
+### Task 6 - I will show you how great I am
+
+- Advanced - **Not completed yet, but definitely planned (and slightly haunting me).**
+- Write a function that splits a string into an array of words (space-separated), null-terminated; returns `NULL` if `str` is `NULL`, empty, or `malloc` fails
+- Prototype: `char **strtow(char *str);` — only `malloc` and `free` allowed
+- Returns a heap-allocated array of heap-allocated word strings, with `NULL` as the last element
+
+**Files:** `101-strtow.c`
+
+---
+
+🔮 What’s Next
+
+I plan to continue working on this project by completing the advanced tasks that are not done yet. This will allow me to deepen my understanding, improve my skills, and push a bit further beyond the basics (because stopping halfway is not really my style).
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Thanks to Holberton School for this introduction to one of C's most powerful — and most dangerous — features. Allocating memory manually is a rite of passage, and Valgrind is the strict but fair judge that keeps me honest. A special thank you to `free()` for preventing this project from becoming a memory catastrophe.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: `holbertonschool-low_level_programming`
+- Project: `malloc_free`
