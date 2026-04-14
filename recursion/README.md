@@ -1,162 +1,196 @@
-![Shell Basics Banner](/assets/holberton.png)
+# recursion
 
-# Recursion – Holberton School Project
-
-## Introduction
-This project was my first deep dive into **recursion**, a fundamental concept in computer science.  
-Instead of solving problems through loops and iteration, I had to think in terms of **breaking a problem into smaller subproblems**, moving step by step toward a base condition.
-
-Working with recursion forced me to understand:
-- how the call stack behaves,
-- how functions call themselves,
-- how to design a correct base case,
-- and when recursion becomes more powerful—or more dangerous—than iteration.
-
-This project also taught me where recursion shines (mathematics, tree structures, divide-and-conquer) and where it should be avoided (very large inputs, expensive depth, risk of stack overflow).
+> Why use a loop when you can call yourself? Recursion: because sometimes the best way forward is to look back.
 
 ---
 
-## Concepts Learned
+## 📝 Description
 
-- **What recursion is**  
-  A function calling itself with a reduced version of the same problem until a base case is reached.
-
-- **How to implement recursion**  
-  - Always define a base case (stop condition).  
-  - Reduce the problem at every call.  
-  - Avoid infinite recursion by ensuring progress toward the base case.
-
-- **When to use recursion**  
-  - Natural mathematical definitions (factorial, exponentiation, Fibonacci).  
-  - String or array traversal when each step reduces the input size.  
-  - Searching, tree algorithms, backtracking, and divide-and-conquer techniques.
-
-- **When not to use recursion**  
-  - When input depth may cause stack overflow.  
-  - When iterative solutions are simpler or more efficient.  
-  - When each recursive call has heavy overhead.
+This project is part of my low-level programming curriculum at Holberton School. It focuses entirely on recursion — the art of writing functions that call themselves until they reach a base case and unwind gracefully. Through a series of exercises of increasing complexity, I implement classical algorithms (factorial, power, square root, prime check) and string operations (reverse, palindrome, wildcard matching) using only recursive calls. No loops. No static variables. Just the call stack and a little faith.
 
 ---
 
-## Tasks
+## 🎯 Learning Objectives
 
-### `0-puts_recursion` – She locked away a secret...
-**Instruction:** Write a function that prints a string followed by a new line.  
-Prototype: `void _puts_recursion(char *s);`
-
-**Constraints:**
-- Mimics the behavior of `puts`.
-- Print characters one by one recursively until reaching the end of the string.
-
-**What I learned:**  
-How to traverse a string recursively and how to structure a base case for terminating a simple recursion.
+At the end of this project, I am able to explain what recursion is and how to implement it in C. I understand what a base case is and why it is essential to avoid infinite recursion. I know in which situations recursion is the right tool — such as problems that naturally decompose into smaller subproblems of the same kind — and in which situations it should be avoided, such as when iterative solutions are more efficient or when the recursion depth risks causing a stack overflow.
 
 ---
 
-### `1-print_rev_recursion` – Why is it so important to dream?
-**Instruction:** Print a string in reverse using recursion.  
-Prototype: `void _print_rev_recursion(char *s);`
+## 🛠️ Technologies Used
 
-**Constraints:**
-- Recursion must be used for reversing.
-- The last character is printed first.
-
-**What I learned:**  
-That recursion naturally handles reverse order by letting calls stack up before printing, illustrating the LIFO behavior of the call stack.
+All programs in this project are written in **C** and compiled on **Ubuntu 20.04 LTS** using `gcc` with the flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. Code style is enforced by the **Betty linter**. The only output function available is `_putchar` — the standard library is entirely forbidden. Loops and static variables are also off-limits, making recursion the only permitted control structure.
 
 ---
 
-### `2-strlen_recursion` – Dreams feel real while we're in them
-**Instruction:** Return the length of a string.  
-Prototype: `int _strlen_recursion(char *s);`
+## ⚙️ Requirements
 
-**Constraints:**
-- Must use recursion, not loops.
-- Stop counting at the null terminator.
-
-**What I learned:**  
-How to express repeated counting through recursive accumulation, and how to build a simple recursive return chain.
-
----
-
-### `3-factorial` – You mustn't be afraid to dream a little bigger
-**Instruction:** Return the factorial of a given number.  
-Prototype: `int factorial(int n);`
-
-**Constraints:**
-- If `n < 0`, return `-1`.  
-- `0! = 1`.
-
-**What I learned:**  
-How mathematical recursion maps directly into code, and how base cases prevent infinite recursion for invalid inputs.
+- **OS:** Ubuntu 20.04 LTS
+- **Compiler:** `gcc` with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- **Allowed editors:** `vi`, `vim`, `emacs`
+- All files must end with a **new line**
+- No errors and no warnings during compilation
+- Global variables are **not allowed**
+- No more than **5 functions per file**
+- Standard library functions (`printf`, `puts`, etc.) are **forbidden**
+- `_putchar` is allowed; do not push `_putchar.c`
+- Loops of any kind are **not allowed**
+- `static` variables are **not allowed**
+- All function prototypes and `_putchar` must be declared in `main.h`
+- Do not push `main.c` test files
+- Code must follow the **Betty style**
 
 ---
 
-### `4-pow_recursion` – Once an idea takes hold...
-**Instruction:** Return `x` raised to the power `y`.  
-Prototype: `int _pow_recursion(int x, int y);`
+## 🚀 Installation
 
-**Constraints:**
-- If `y < 0`, return `-1`.
-
-**What I learned:**  
-Exponentiation as repeated multiplication through recursion, and how to propagate errors via return values.
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/recursion
+```
 
 ---
 
-### `5-sqrt_recursion` – Your subconscious is looking for the dreamer
-**Instruction:** Return the natural square root of a number.  
-Prototype: `int _sqrt_recursion(int n);`
+## ▶️ Usage / Execution
 
-**Constraints:**
-- If no natural square root exists, return `-1`.
+Compile any `.c` file with its corresponding test main and run the output:
 
-**What I learned:**  
-How to implement recursive search for a solution (incrementing a candidate), illustrating recursive iteration without loops.
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 _putchar.c 0-main.c 0-puts_recursion.c -o 0-puts_recursion
+./0-puts_recursion
+```
 
----
-
-### `6-is_prime_number` – Inception. Is it possible?
-**Instruction:** Return 1 if the number is prime, otherwise 0.  
-Prototype: `int is_prime_number(int n);`
-
-**Constraints:**
-- Check primality using recursive division tests.
-
-**What I learned:**  
-How recursion can replace loops for incremental testing, and how to divide a problem into smaller checks while preserving state between calls.
+Replace filenames as appropriate for each task.
 
 ---
 
-### `100-is_palindrome` *(advanced)* – We can do almost anything
-**Instruction:** Return 1 if a string is a palindrome.  
-Prototype: `int is_palindrome(char *s);`
+## 📊 Project Progress
 
-**Constraints:**
-- Empty string counts as a palindrome.
-- Must compare symmetric characters recursively.
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
 
-**What I learned:**  
-How recursion can elegantly traverse two ends of a string simultaneously, reducing the problem at both boundaries.
-
----
-
-### `101-wildcmp` *(advanced)* – Now, before you tell me it's impossible...
-**Instruction:** Compare two strings and return 1 if they can be considered identical.  
-Prototype: `int wildcmp(char *s1, char *s2);`
-
-**Constraints:**
-- `s2` may contain `*` wildcards.
-- `*` can match **any** string, including empty.
-
-**What I learned:**  
-How recursion is essential for pattern matching with branching logic, since `*` creates multiple possible paths to explore.
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 0%</sub>
+</p>
 
 ---
 
-## Conclusion
-This project taught me how powerful recursion is—but also how careful I need to be when using it.
+## ✨ Features
 
-I learned to design clear base cases, reduce the problem step by step, and ensure that each recursive call eventually terminates. I also saw how recursion naturally fits certain problems (mathematics, strings, primality, palindromes) and becomes indispensable for complex pattern matching.
+### Task 0 - She locked away a secret, deep inside herself, something she once knew to be true... but chose to forget
 
-Beyond syntax, recursion changed the way I think: breaking problems into smaller versions of themselves and trusting the call stack to rebuild the solution on the way back up.
+- Mandatory
+- Write a recursive function that prints a string followed by a new line
+- Prototype: `void _puts_recursion(char *s);` — only `_putchar` allowed, no loops
+- Outputs the full string character by character via recursion, then prints `\n`
+
+**Files:** `0-puts_recursion.c`
+
+---
+
+### Task 1 - Why is it so important to dream? Because, in my dreams we are together
+
+- Mandatory
+- Write a recursive function that prints a string in reverse
+- Prototype: `void _print_rev_recursion(char *s);` — only `_putchar` allowed, no loops
+- Outputs the string's characters from last to first via recursion
+
+**Files:** `1-print_rev_recursion.c`
+
+---
+
+### Task 2 - Dreams feel real while we're in them. It's only when we wake up that we realize something was actually strange
+
+- Mandatory
+- Write a recursive function that returns the length of a string
+- Prototype: `int _strlen_recursion(char *s);` — no standard library, no loops
+- Returns the number of characters before the null terminator, computed recursively
+
+**Files:** `2-strlen_recursion.c`
+
+---
+
+### Task 3 - You mustn't be afraid to dream a little bigger, darling
+
+- Mandatory
+- Write a recursive function that returns the factorial of a given number; returns `-1` for negative input and `1` for `0`
+- Prototype: `int factorial(int n);` — no standard library, no loops
+- Returns the correct factorial for non-negative integers and `-1` for any negative input
+
+**Files:** `3-factorial.c`
+
+---
+
+### Task 4 - Once an idea has taken hold of the brain it's almost impossible to eradicate
+
+- Mandatory
+- Write a recursive function that returns `x` raised to the power of `y`; returns `-1` if `y` is negative
+- Prototype: `int _pow_recursion(int x, int y);` — no standard library, no loops
+- Correctly computes integer exponentiation and returns `-1` for negative exponents
+
+**Files:** `4-pow_recursion.c`
+
+---
+
+### Task 5 - Your subconscious is looking for the dreamer
+
+- Mandatory
+- Write a recursive function that returns the natural (integer) square root of a number; returns `-1` if the number has no natural square root
+- Prototype: `int _sqrt_recursion(int n);` — no standard library, no loops
+- Returns the exact integer square root if it exists, otherwise `-1`
+
+**Files:** `5-sqrt_recursion.c`
+
+---
+
+### Task 6 - Inception. Is it possible?
+
+- Mandatory
+- Write a recursive function that returns `1` if the input integer is a prime number, otherwise `0`
+- Prototype: `int is_prime_number(int n);` — no standard library, no loops
+- Returns `1` for primes (e.g., 17, 113, 7919) and `0` for all others including negatives and `1`
+
+**Files:** `6-is_prime_number.c`
+
+---
+
+### Task 7 - They say we only use a fraction of our brain's true potential. Now that's when we're awake. When we're asleep, we can do almost anything
+
+- Advanced
+- Write a recursive function that returns `1` if a string is a palindrome, `0` otherwise; an empty string is a palindrome
+- Prototype: `int is_palindrome(char *s);` — no standard library, no loops
+- Returns `1` for strings like `"level"`, `"redder"`, `"step on no pets"` and `0` for non-palindromes
+
+**Files:** `100-is_palindrome.c`
+
+---
+
+### Task 8 - Inception. Now, before you bother telling me it's impossible...
+
+- Advanced - **Not completed yet, but definitely planned (and slightly haunting me).**
+- Write a recursive function that compares two strings and returns `1` if they can be considered identical, where `s2` may contain `*` as a wildcard matching any sequence of characters (including empty)
+- Prototype: `int wildcmp(char *s1, char *s2);` — no standard library, no loops
+- Handles patterns like `"*.c"`, `"m*c"`, `"***"` and correctly resolves all wildcard combinations
+
+**Files:** `101-wildcmp.c`
+
+---
+
+🔮 What’s Next
+
+I plan to continue working on this project by completing the advanced tasks that are not done yet. This will allow me to deepen my understanding, improve my skills, and push a bit further beyond the basics (because stopping halfway is not really my style).
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Thanks to Holberton School for a project that teaches you to think differently — literally. Once you stop reaching for loops and start trusting the call stack, something clicks. Special mention to the base case, the unsung hero that prevents every recursive function from becoming an infinite loop of regret.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: `holbertonschool-low_level_programming`
+- Project: `recursion`
