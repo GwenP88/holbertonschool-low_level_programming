@@ -1,121 +1,166 @@
-![Shell Basics Banner](/assets/holberton.png)
+# argc_argv
 
-# argc & argv – Holberton School Project
-
-## Introduction
-This project introduced me to **command-line arguments** in C, and forced me to move beyond programs that only rely on internal variables. For the first time, my programs had to process data passed directly from the terminal, validate inputs, convert strings to numbers, and manage error cases gracefully.
-
-I also learned the two valid prototypes of `main`, why both exist, and how to silence unused-parameter warnings using tools like `__attribute__((unused))` and `(void)parameter`.  
-These concepts are essential for building real command-line utilities that behave correctly regardless of how they are invoked.
+> Your program has a voice — `argc` and `argv` are how it listens to the world.
 
 ---
 
-## Concepts Learned
+## 📝 Description
 
-- **How to use arguments passed to the program**  
-  - Understanding the meaning of `argc` (argument count) and `argv` (argument vector).  
-  - Accessing values from the command line and iterating over them.
-
-- **Two valid prototypes of `main`**
-  - `int main(void)` → used when no arguments are required.  
-  - `int main(int argc, char *argv[])` → used when arguments need to be processed.
-
-- **How to handle unused parameters**
-  - Using `(void)argc;` or `(void)argv;` to silence warnings.  
-  - Or using `__attribute__((unused))` for cleaner prototypes.
-
-- **Practical argument parsing**
-  - Detect missing arguments.  
-  - Validate that arguments represent valid integers.  
-  - Convert strings to numbers with `atoi`.
+This project is part of my low-level programming curriculum at Holberton School. It focuses on how C programs receive and process command-line arguments through the `argc` and `argv` parameters of the `main` function. Through a series of progressively challenging programs, I learn to read, validate, and compute with arguments passed at runtime — without touching global variables and while correctly handling edge cases like missing arguments, invalid input, and dynamic renaming of the program itself.
 
 ---
 
-## Tasks
+## 🎯 Learning Objectives
 
-### `0-whatsmyname` – It ain't what they call you, it's what you answer to
-**Instruction:** Write a program that prints its own name, followed by a newline.
-
-**Constraints:**
-- The program must print its name exactly as received in `argv[0]`.  
-- If renamed, it prints the new name without recompilation.  
-- You must not strip the path.
-
-**What I learned:**  
-How to use `argv[0]` to inspect the invoked program name and how command-line invocation directly impacts program behavior.
+At the end of this project, I am able to explain how to use arguments passed to a C program via the command line. I know the two prototypes of `main` — `int main(void)` and `int main(int argc, char *argv[])` — and I understand in which situations each one should be used. I am also able to use `__attribute__((unused))` or a cast to `(void)` to properly compile functions that contain unused variables or parameters without triggering warnings.
 
 ---
 
-### `1-args` – Silence is argument carried out by other means
-**Instruction:** Write a program that prints the number of arguments passed to it.
+## 🛠️ Technologies Used
 
-**Constraints:**
-- Print a number followed by a newline.
-- The program name is **not** counted.
-
-**What I learned:**  
-How `argc` works, and how to subtract one to get the actual number of user-provided arguments.
+All programs in this project are written in **C** and compiled on **Ubuntu 20.04 LTS** using `gcc` with the flags `-Wall -Werror -Wextra -pedantic -std=gnu89`. Code style is enforced by the **Betty linter**. Unlike previous projects, the **standard library is allowed** here, enabling the use of `printf`, `atoi`, and other utilities to process and display argument data.
 
 ---
 
-### `2-args` – The best argument against democracy is a five-minute conversation with the average voter
-**Instruction:** Write a program that prints all arguments it receives.
+## ⚙️ Requirements
 
-**Constraints:**
-- Print each argument on its own line.
-- Include the first argument (`argv[0]`).
-
-**What I learned:**  
-How to loop through all values in `argv` and handle arbitrary numbers of inputs.
-
----
-
-### `3-mul` – Neither irony nor sarcasm is argument
-**Instruction:** Write a program that multiplies two numbers.
-
-**Constraints:**
-- Program receives exactly **two** arguments.
-- Print the result of their multiplication.
-- If arguments are missing, print `Error` and return `1`.
-- All values must fit in an `int`.
-
-**What I learned:**  
-How to validate argument counts and convert string arguments to integers using `atoi`.
+- **OS:** Ubuntu 20.04 LTS
+- **Compiler:** `gcc` with options `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- **Allowed editors:** `vi`, `vim`, `emacs`
+- All files must end with a **new line**
+- No errors and no warnings during compilation
+- Global variables are **not allowed**
+- No more than **5 functions per file**
+- The **standard library is allowed**
+- All function prototypes and `_putchar` must be declared in `main.h`
+- Code must follow the **Betty style**
 
 ---
 
-### `4-add` – To infinity and beyond
-**Instruction:** Add all positive numbers passed as arguments.
+## 🚀 Installation
 
-**Constraints:**
-- Print the result followed by a newline.
-- If no arguments are given, print `0`.
-- If any argument is not entirely numeric, print `Error` and return `1`.
-- All values fit in an `int`.
-
-**What I learned:**  
-How to validate that a string contains only digits before using it, and how to accumulate values from multiple arguments.
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/argc_argv
+```
 
 ---
 
-### `100-change` – Minimal Number of Coins for Change *(advanced)*
-**Instruction:** Print the minimum number of coins needed to make change.
+## ▶️ Usage / Execution
 
-**Constraints:**
-- Usage: `./change cents`
-- If incorrect number of arguments → print `Error` and return `1`.
-- Use `atoi` to parse the argument.
-- If the value is negative → print `0`.
-- Allowed coin values: **25, 10, 5, 2, 1**.
-- You may use unlimited coins.
+Compile any `.c` file and run the resulting executable, passing arguments as needed:
 
-**What I learned:**  
-How to implement a greedy algorithm with input validation and produce a result based on real-world constraints like coin denominations.
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-whatsmyname.c -o mynameis
+./mynameis
+```
+
+For programs that require arguments:
+
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-mul.c -o mul
+./mul 6 7
+```
+
+Replace filenames and arguments as appropriate for each task.
 
 ---
 
-## Conclusion
-This project strengthened my understanding of how programs interact with the command line. I learned to:
+## 📊 Project Progress
 
-- Read and va
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
 
+<p align="center">
+<sub>Mandatory tasks completion: 100% --- Advanced tasks completion: 0%</sub>
+</p>
+
+---
+
+## ✨ Features
+
+### Task 0 - It ain't what they call you, it's what you answer to
+
+- Mandatory
+- Write a program that prints its own name followed by a new line; renaming the binary changes what is printed without recompiling
+- Must use `argv[0]`; the path before the name must not be removed
+- Outputs `./mynameis` when invoked as `./mynameis`, and updates automatically if the binary is renamed
+
+**Files:** `0-whatsmyname.c`
+
+---
+
+### Task 1 - Silence is argument carried out by other means
+
+- Mandatory
+- Write a program that prints the number of arguments passed to it, followed by a new line
+- Must use `argc`; the program name itself does not count
+- Outputs `0` when called with no arguments, `1` for one argument, and so on
+
+**Files:** `1-args.c`
+
+---
+
+### Task 2 - The best argument against democracy is a five-minute conversation with the average voter
+
+- Mandatory
+- Write a program that prints all arguments it receives, one per line, including `argv[0]`
+- Must iterate over `argv` using `argc`
+- Outputs every argument on its own line, starting with the program name
+
+**Files:** `2-args.c`
+
+---
+
+### Task 3 - Neither irony nor sarcasm is argument
+
+- Mandatory
+- Write a program that multiplies two numbers passed as arguments and prints the result; prints `Error` and returns `1` if the number of arguments is not exactly two
+- Must use `atoi`; result fits in an `int`
+- Outputs the integer product of the two arguments, or `Error\n` with exit status `1` on bad input
+
+**Files:** `3-mul.c`
+
+---
+
+### Task 4 - To infinity and beyond
+
+- Mandatory
+- Write a program that adds all positive numbers passed as arguments; prints `0` if no arguments; prints `Error` and returns `1` if any argument contains non-digit characters
+- Must validate each argument character by character; result fits in an `int`
+- Outputs the sum of all valid arguments, `0` for no arguments, or `Error\n` with exit status `1` for invalid input
+
+**Files:** `4-add.c`
+
+---
+
+### Task 5 - Minimal Number of Coins for Change
+
+- Advanced - **This task is still in progress — my future self is on it.**
+- Write a program that prints the minimum number of coins needed to make change for a given number of cents using coins of 25, 10, 5, 2, and 1
+- Usage: `./change cents`; must use `atoi`; prints `Error` and returns `1` if argument count is not exactly 1; prints `0` for negative input
+- Outputs the minimum number of coins as a single integer followed by a new line
+
+**Files:** `100-change.c`
+
+---
+
+🔮 What’s Next
+
+I plan to continue working on this project by completing the advanced tasks that are not done yet. This will allow me to deepen my understanding, improve my skills, and push a bit further beyond the basics (because stopping halfway is not really my style).
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Thanks to Holberton School for a project that teaches something deceptively simple but genuinely fundamental: how a program talks to its user before a single line of logic runs. Special thanks to `argc` for always being honest about how many arguments actually showed up.
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: `holbertonschool-low_level_programming`
+- Project: `argc_argv`
