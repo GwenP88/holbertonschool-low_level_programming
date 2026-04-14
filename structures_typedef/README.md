@@ -1,112 +1,154 @@
-![Shell Basics Banner](/assets/holberton.png)
+# structures_typedef
 
-# Structures & Typedef – Holberton School Project
-
-## Introduction
-This project is where C started to feel more like a real-world language and less like a collection of isolated functions and primitive types.  
-By working with `struct` and `typedef`, I learned how to model real entities (here: dogs) with multiple attributes, how to group related data in a single type, and how to manage these objects safely in memory (creation, initialization, printing, destruction).  
-This README summarizes the concepts I learned and what each task brought in terms of practice and mindset.
+> Teaching a computer about dogs — one struct at a time 🐾
 
 ---
 
-## Concepts Learned
+## 📝 Description
 
-- What a **structure** is in C and why we use it:
-  - Grouping several related pieces of data into a single logical unit.
-  - Representing real-life entities with multiple attributes (name, age, owner, etc.).
-- How to **declare** and **use** a `struct` type.
-- How to pass and manipulate **pointers to structures**.
-- How to properly **initialize** a struct (stack and heap cases).
-- How to handle **NULL fields** safely when reading or printing a struct.
-- How and why to use **`typedef`**:
-  - Creating a shorter, more readable alias for a complicated type (`dog_t` vs `struct dog`).
-- Memory management for structured data:
-  - Allocating memory dynamically for a struct and its fields.
-  - Creating copies of strings when building a struct.
-  - Writing a clean **free** function to release all allocated memory (no leaks).
+This project dives into one of C's most useful features: structures and typedefs. I work with a custom `struct dog` type to explore how to group related data under one roof, initialize it, print it, dynamically allocate it, and — just as importantly — free it without leaving memory leaks behind. Think of it as learning how to responsibly adopt a dog: create it, care for it, and say goodbye cleanly.
 
 ---
 
-## Tasks
+## 🎯 Learning Objectives
 
-### `0-poppy` – Define `struct dog`
-**Instruction:** Define a new type `struct dog` with the following fields:
-- `name` (char *)
-- `age` (float)
-- `owner` (char *)
-
-**Constraints:** The structure must be declared in `dog.h` and included correctly.  
-**What I learned:** How to define a basic `struct` type and use it to group data that belongs together.
+At the end of this project, I am able to explain what structures are, when and why to use them over plain variables, and how to declare and access their members in C. I understand how `typedef` allows me to create cleaner, more readable type aliases — so instead of writing `struct dog` everywhere, I can simply write `dog_t` and feel like a professional. I can also dynamically allocate structures on the heap, properly copy strings into them, and release all allocated memory to keep Valgrind happy.
 
 ---
 
-### `1-init_dog` – Initialize a `struct dog`
-**Instruction:** Write a function that initializes a variable of type `struct dog`.  
-Prototype: `void init_dog(struct dog *d, char *name, float age, char *owner);`
+## 🛠️ Technologies Used
 
-**Constraints:**  
-- Function must handle the pointer parameter correctly.  
-- The caller passes the address of an existing `struct dog`.  
-
-**What I learned:** How to initialize a struct via a pointer, and how to set its fields from function parameters in a clean and reusable way.
+This project is written entirely in C, compiled with `gcc` on Ubuntu 20.04 LTS using strict flags (`-Wall -Werror -Wextra -pedantic -std=gnu89`). Code style is enforced with the Betty linter. Standard library usage is intentionally limited to `printf`, `malloc`, `free`, and `exit`.
 
 ---
 
-### `2-print_dog` – Print a `struct dog`
-**Instruction:** Write a function that prints a `struct dog`.  
-Prototype: `void print_dog(struct dog *d);`
+## ⚙️ Requirements
 
-**Constraints:**  
-- If `d` is `NULL`, print nothing.  
-- If any field is `NULL`, print `(nil)` for that field (e.g. `Name: (nil)`).  
-- Allowed to use the standard library.  
-
-**What I learned:** How to safely handle `NULL` pointers and `NULL` fields inside a struct, and how to design a robust “print” function that doesn’t crash on incomplete data.
-
----
-
-### `3-dog_t` – `typedef` for `struct dog`
-**Instruction:** Define a new type `dog_t` as a new name for `struct dog`.  
-
-**Constraints:**  
-- The alias must be defined in `dog.h`.  
-
-**What I learned:** How to use `typedef` to simplify type names and make code more readable, especially when the original type name is verbose.
+- OS: Ubuntu 20.04 LTS
+- Compiler: `gcc` with flags `-Wall -Werror -Wextra -pedantic -std=gnu89`
+- All files must end with a new line
+- Code must follow the Betty style (checked with `betty-style.pl` and `betty-doc.pl`)
+- No global variables allowed
+- No more than 5 functions per file
+- Only `printf`, `malloc`, `free`, and `exit` from the standard library
+- All header files must be include-guarded
+- A `README.md` at the root of the project is mandatory
 
 ---
 
-### `4-new_dog` – Create a new dog (dynamic allocation)
-**Instruction:** Write a function that creates a new dog.  
-Prototype: `dog_t *new_dog(char *name, float age, char *owner);`
+## 🚀 Installation
 
-**Constraints:**  
-- Must allocate memory for the struct and for copies of `name` and `owner`.  
-- Must store **copies** of `name` and `owner`, not just pointers to the original strings.  
-- Must return `NULL` if allocation fails (for the struct or any field).  
-
-**What I learned:**  
-- How to dynamically allocate a struct and its internal fields.  
-- How to properly copy strings into dynamically allocated memory.  
-- How to handle failures cleanly (checking each allocation step and returning `NULL` if something goes wrong).
+```bash
+git clone https://github.com/GwenP88/holbertonschool-low_level_programming.git
+cd holbertonschool-low_level_programming/structures_typedef
+```
 
 ---
 
-### `5-free_dog` – Free a dog
-**Instruction:** Write a function that frees a `dog_t`.  
-Prototype: `void free_dog(dog_t *d);`
+## ▶️ Usage / Execution
 
-**Constraints:**  
-- Must free all dynamically allocated memory associated with the dog (strings and struct).  
-- Must be safe to call with a pointer previously returned by `new_dog`.  
+Compile each task with the corresponding main file (provided for testing only):
 
-**What I learned:**  
-- How to implement a corresponding “destructor” function for a dynamically allocated struct.  
-- How to ensure there are no memory leaks by freeing every piece of memory that was allocated for the object.
+```bash
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 0-main.c -o a && ./a
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 1-main.c 1-init_dog.c -o b && ./b
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 2-main.c 2-print_dog.c -o c && ./c
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 3-main.c -o d && ./d
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 4-main.c 4-new_dog.c -o e && ./e
+gcc -Wall -pedantic -Werror -Wextra -std=gnu89 5-main.c 5-free_dog.c 4-new_dog.c -o f && valgrind ./f
+```
 
 ---
 
-## Conclusion
-This project taught me how to model data properly in C using `struct` and how to simplify type handling with `typedef`.  
-I moved from manipulating separate primitive variables to thinking in terms of **data structures**: creation, initialization, use, printing, and destruction.  
-These are core skills for writing clean, maintainable C code in bigger projects, where well-designed structures and correct memory management make the difference between fragile code and robust software.
+## 📊 Project Progress
 
+<p align="center">
+<img src="assets/progress_barre_100.gif" alt="Mandatory tasks progress" width="80%">
+</p>
+
+<p align="center">
+<sub>Mandatory tasks completion: 100%</sub>
+</p>
+
+---
+
+## ✨ Features
+
+### Task 0 - Poppy
+
+- Mandatory
+- Define a new type `struct dog` with three members: `name` (char *), `age` (float), and `owner` (char *)
+- Must be declared in the header file `dog.h` with proper include guards
+- Allows declaring and using a `struct dog` variable directly in main
+
+**Files:** `dog.h`
+
+---
+
+### Task 1 - A dog is the only thing on earth that loves you more than you love yourself
+
+- Mandatory
+- Write a function `init_dog` that initializes a `struct dog` variable
+- Prototype: `void init_dog(struct dog *d, char *name, float age, char *owner);`
+- Sets all three members of the struct from the provided arguments
+
+**Files:** `1-init_dog.c`
+
+---
+
+### Task 2 - A dog will teach you unconditional love
+
+- Mandatory
+- Write a function `print_dog` that prints all fields of a `struct dog`
+- Prototype: `void print_dog(struct dog *d);`
+- If a string field is NULL, print `(nil)` instead; if `d` itself is NULL, print nothing
+
+**Files:** `2-print_dog.c`
+
+---
+
+### Task 3 - Outside of a dog, a book is a man's best friend
+
+- Mandatory
+- Define a new type `dog_t` as a typedef alias for `struct dog`
+- Added to the header file `dog.h` alongside the original struct definition
+- Allows declaring `dog_t my_dog;` instead of `struct dog my_dog;`
+
+**Files:** `dog.h`
+
+---
+
+### Task 4 - A door is what a dog is perpetually on the wrong side of
+
+- Mandatory
+- Write a function `new_dog` that dynamically creates a new dog
+- Prototype: `dog_t *new_dog(char *name, float age, char *owner);`
+- Must store copies of `name` and `owner` (not just pointers); returns NULL on failure
+
+**Files:** `4-new_dog.c`
+
+---
+
+### Task 5 - How many legs does a dog have if you call his tail a leg?
+
+- Mandatory
+- Write a function `free_dog` that properly frees a dynamically allocated `dog_t`
+- Prototype: `void free_dog(dog_t *d);`
+- Must free all allocated memory including copied strings; verified with Valgrind (0 leaks)
+
+**Files:** `5-free_dog.c`
+
+---
+
+## 🤝 Contributions & Acknowledgements
+
+Big thanks to the Holberton School staff and fellow students for the dog-themed tasks — learning about structs has never been this wholesome. Poppy the dog deserves a special mention for being the world's most patient test subject. 🐕
+
+---
+
+## 👤 Author
+
+**Gwenaelle PICHOT**
+- Student at Holberton School
+- Track: holbertonschool-low_level_programming
+- Project: structures_typedef

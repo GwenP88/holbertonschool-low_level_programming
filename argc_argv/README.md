@@ -146,7 +146,7 @@ Replace filenames and arguments as appropriate for each task.
 
 ---
 
-🔮 What’s Next
+## 🔮 What’s Next
 
 I plan to continue working on this project by completing the advanced tasks that are not done yet. This will allow me to deepen my understanding, improve my skills, and push a bit further beyond the basics (because stopping halfway is not really my style).
 
