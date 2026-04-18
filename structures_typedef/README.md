@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.jpg" alt="holbertonschool-low-level-programming Banner">
+  <img src="./assets/banner.jpg" alt="holbertonschool-low-level-programming Banner" widht="400">
 </p>
 
 # structures_typedef
