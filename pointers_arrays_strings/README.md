@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpg" alt="holbertonschool-shell Banner">
+</p>
+
 # pointers_arrays_strings
 
 > Pointers, arrays, strings — the holy trinity of C that turns confusion into confidence, one dereference at a time.

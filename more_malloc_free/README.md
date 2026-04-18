@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # more_malloc_free
 
 > `malloc` was just the beginning — now meet `realloc`, `calloc`, and `exit`. Growing up on the heap, one block at a time.

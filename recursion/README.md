@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # recursion
 
 > Why use a loop when you can call yourself? Recursion: because sometimes the best way forward is to look back.

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpg" alt="holbertonschool-shell Banner">
+</p>
+
 # hello_world
 
 > My very first steps in C — where every semicolon is sacred and every warning is a lesson in humility.

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # file_io
 
 > The standard library is off the table — time to talk directly to the kernel. `open`, `read`, `write`, `close`: the four syscalls that rule them all.

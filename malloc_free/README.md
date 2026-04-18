@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # malloc_free
 
 > Stack memory is nice, but sometimes you need to build your own — `malloc` gives you the keys to the heap.

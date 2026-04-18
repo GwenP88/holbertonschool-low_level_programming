@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # functions_nested_loops
 
 > Loops within loops, functions within functions — welcome to the rabbit hole of C programming.

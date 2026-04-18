@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # argc_argv
 
 > Your program has a voice — `argc` and `argv` are how it listens to the world.

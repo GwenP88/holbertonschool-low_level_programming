@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # variadic_functions
 
 > When you don't know how many arguments you'll get — and you're totally fine with that ✨

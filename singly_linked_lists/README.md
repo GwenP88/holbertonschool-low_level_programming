@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # singly_linked_lists
 
 > Arrays are so last century — let's chain things together 🔗

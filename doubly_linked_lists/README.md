@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # doubly_linked_lists
 
 > Singly linked lists only look forward — doubly linked lists have the wisdom to also look back.

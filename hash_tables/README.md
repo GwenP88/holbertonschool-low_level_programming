@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # hash_tables
 
 > O(1) lookup time — because life is too short to search linearly through everything.

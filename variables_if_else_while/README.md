@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # variables_if_else_while
 
 > `if` logic is the backbone of programming — `while` I still have things to learn, I'll keep looping through it.

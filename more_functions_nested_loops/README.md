@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+</p>
+
 # more_functions_nested_loops
 
 > Because once wasn't enough — more loops, more functions, more fun.

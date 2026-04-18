@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="./assets/banner.jpg" alt="holbertonschool-shell Banner">
+</p>
+
 # structures_typedef
 
 > Teaching a computer about dogs — one struct at a time 🐾
