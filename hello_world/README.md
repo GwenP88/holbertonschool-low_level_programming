@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.jpg" alt="holbertonschool-shell Banner">
+  <img src="./assets/banner.jpg" alt="holbertonschool-low-level-programming Banner">
 </p>
 
 # hello_world

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-low-level-programming Banner">
 </p>
 
 # malloc_free

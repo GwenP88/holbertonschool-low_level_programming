@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.jpeg" alt="holbertonschool-shell Banner">
+  <img src="./assets/banner.jpeg" alt="holbertonschool-low-level-programming Banner">
 </p>
 
 # recursion
@@ -78,6 +78,10 @@ Replace filenames as appropriate for each task.
 </p>
 
 ---
+
+<p align="center">
+  <img src="./assets/banner1.jpg" alt="holbertonschool-low-level-programming Banner">
+</p>
 
 ## ✨ Features
 
